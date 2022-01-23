@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ce8fbc7ded7b05381a40e3a2e6141174e0bb6f5b
+*.toc
+*.log
+*.aux
+*.out
+*.backup
+*.directory
+*.o
+*.ppu
+

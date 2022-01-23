@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Jouer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Jouer</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#augmenterScore">augmenterScore</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>; var score : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Jouer.html#transformerToucheEnDirection">transformerToucheEnDirection</a></b>(toucheDirection : Char) : <a  href="Types.html#Direction">Direction</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#estMort">estMort</a></b>(mortSerp : Boolean; objet :<a  href="Types.html#Contenus">Contenus</a>; var finpartie : boolean;score : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#grandirSerpent">grandirSerpent</a></b>(dir : <a  href="Types.html#Direction">Direction</a>; objet : <a  href="Types.html#Contenus">Contenus</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#directionOpposee">directionOpposee</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>;var toucheDirection : char);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="Jouer.html#Renaissance">Renaissance</a></b>(objet:<a  href="Types.html#Contenus">Contenus</a> ;var serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Jouer.html#doitClignoter">doitClignoter</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#vitesseWeedPiment">vitesseWeedPiment</a></b>(vitesseEvo : Boolean; vitesseInitiale : Integer; objet: <a  href="Types.html#Contenus">Contenus</a>; var vitesse: Integer);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#vitesseEvolutive">vitesseEvolutive</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>; vitesseEvo: Boolean;score: <a  href="Types.Score.html">Score</a>; var vitesse:Integer);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#videPlateau">videPlateau</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>; xtaille,ytaille : Integer; var plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; var estVide : Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#jakadi">jakadi</a></b>(xtaille,ytaille : Integer; dir : <a  href="Types.html#Direction">Direction</a>; mortSerp : Boolean; objet :<a  href="Types.html#Contenus">Contenus</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>; var score : <a  href="Types.Score.html">Score</a>; var finpartie : Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#detectionFruit">detectionFruit</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>; var fruit : <a  href="Types.html#Contenus">Contenus</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="Jouer.html#SelectionChar">SelectionChar</a></b>(derniereTouche : char) : char;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#selectionTouche">selectionTouche</a></b>(var toucheDirection : char; var dir : <a  href="Types.html#Direction">Direction</a>; objet : <a  href="Types.html#Contenus">Contenus</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#niveauStage">niveauStage</a></b>(serp : <a  href="Types.Serpent.html">Serpent</a>;plateauJeu : <a  href="Types.html#Plateau">Plateau</a>;objet : <a  href="Types.html#Contenus">Contenus</a>; var scoore : <a  href="Types.Score.html">Score</a>; var xtaille,ytaille : Integer; var vitesse : Integer; var clignotement : Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#jouerPartie">jouerPartie</a></b>(vitesseEvo:Boolean;clingotement : Boolean; plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; findepartie : Boolean; vitesse : Integer; serp : <a  href="Types.Serpent.html">Serpent</a>;var xtaille, ytaille : Integer; var scoore : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Jouer.html#snake">snake</a></b>(var fichierMeilleursScores : Text);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="augmenterScore"></span><code>procedure <b>augmenterScore</b>(objet : <a  href="Types.html#Contenus">Contenus</a>; var score : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'augmenter le score d'un certain nombre de points en fonction du fruit mangé  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>donne le type de fruit mangé par le serpent</dd>
+<dt>score</dt>
+<dd>le score qui sera actualise à chaque fois que le joueur mange un fruit</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="transformerToucheEnDirection"></span><code>function <b>transformerToucheEnDirection</b>(toucheDirection : Char) : <a  href="Types.html#Direction">Direction</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Fonction permettant de recevoir une touche entrée par l'utilisateur et la transformer en une direction  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>toucheDirection</dt>
+<dd>est une touche du clavier, qui devra être une flèche directionnelle</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">dir Une direction du serpent, qui pourra être utilisée pour déplacer le serpent</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="estMort"></span><code>procedure <b>estMort</b>(mortSerp : Boolean; objet :<a  href="Types.html#Contenus">Contenus</a>; var finpartie : boolean;score : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'arrêter la partie lorsque le serpent touche un mur/obstacle ou se mord la queue    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>mortSerp</dt>
+<dd>booléen permettant de savoir si le serpent s'est mordu la queue ou non</dd>
+<dt>objet</dt>
+<dd>le contenu de la case où se trouve la tête du serpent</dd>
+<dt>finpartie</dt>
+<dd>booléen qui indique si la partie est finie ou non</dd>
+<dt>score</dt>
+<dd>le score qui est affiché lorsque la partie est finie</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="grandirSerpent"></span><code>procedure <b>grandirSerpent</b>(dir : <a  href="Types.html#Direction">Direction</a>; objet : <a  href="Types.html#Contenus">Contenus</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant de faire grandir le serpent d'une case après l'ingestion d'un fruit   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>dir</dt>
+<dd>la direction dans laquelle on doit ajouter le nouveau morceau de serpent</dd>
+<dt>objet</dt>
+<dd>le contenu de la case où se trouve la tête du serpent</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="directionOpposee"></span><code>procedure <b>directionOpposee</b>(objet : <a  href="Types.html#Contenus">Contenus</a>;var toucheDirection : char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant de donner la touche opposée à la touche prise en entrée si l'objet pris en entrée est une coco  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>l'objet que l'on regarde pour savoir si c'est une coco</dd>
+<dt>toucheDirection</dt>
+<dd>la touche direction que l'on va modifier si le fruit est une coco</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Renaissance"></span><code>Procedure <b>Renaissance</b>(objet:<a  href="Types.html#Contenus">Contenus</a> ;var serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet de diminuer la taille du serpent de moitité si le fruit pris en entrée est une myrtille  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>l'objet que l'on regarde pour savoir si c'est une myrtille</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="doitClignoter"></span><code>function <b>doitClignoter</b>(objet : <a  href="Types.html#Contenus">Contenus</a>):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Fonction dont le rôle est de renvoyer un booléen indiquant si un citron a été mangé et donc de faire clignoter le jeu  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>le type de fruit mangé par le serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">Un booléen qui indique si le jeu doit clignoter ou non </p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="vitesseWeedPiment"></span><code>procedure <b>vitesseWeedPiment</b>(vitesseEvo : Boolean; vitesseInitiale : Integer; objet: <a  href="Types.html#Contenus">Contenus</a>; var vitesse: Integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet de gérer les variations de vitesse avec les fruits weed et piment    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non</dd>
+<dt>vitesseInitiale</dt>
+<dd>la vitesse initiale telle qu'elle a été choisie par l'utilisateur lors de l'initialisation</dd>
+<dt>objet</dt>
+<dd>l'objet que le serpent recontre lors de son déplacement</dd>
+<dt>vitesse</dt>
+<dd>la variable qui contient la valeur de la vitesse modifiée par les fruits</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="vitesseEvolutive"></span><code>procedure <b>vitesseEvolutive</b>(objet : <a  href="Types.html#Contenus">Contenus</a>; vitesseEvo: Boolean;score: <a  href="Types.Score.html">Score</a>; var vitesse:Integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'activer la vitesse progressive du serpent en fonction du nombre de points du joueur     *</p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>l'objet que le serpent recontre lors de son déplacement</dd>
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non</dd>
+<dt>score</dt>
+<dd>le nombre de points permet à la procédure d'augmenter la vitesse ou non</dd>
+<dt>vitesse</dt>
+<dd>la variable qui contient la valeur de la vitesse modifiée par les fruits</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="videPlateau"></span><code>procedure <b>videPlateau</b>(objet : <a  href="Types.html#Contenus">Contenus</a>; xtaille,ytaille : Integer; var plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; var estVide : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet de vider le plateau lorsque le serpent mange un fruit      *</p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>l'objet rencontré par le serpent lors de son déplacement (on regarde si c'est un fruit ou pas)</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>plateauJeu</dt>
+<dd>le plateau de jeu</dd>
+<dt>estVide</dt>
+<dd>variable booléenne qui permet de savoir si la plateau a été vidé ou pas</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="jakadi"></span><code>procedure <b>jakadi</b>(xtaille,ytaille : Integer; dir : <a  href="Types.html#Direction">Direction</a>; mortSerp : Boolean; objet :<a  href="Types.html#Contenus">Contenus</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>; var score : <a  href="Types.Score.html">Score</a>; var finpartie : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Procédure qui permet de gérer certaines les effets sur le serpent (et la partie) en fonction de l'objet rencontré par le serpent        </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>dir</dt>
+<dd>la direction dans laquelle le serpent se déplace au moment de l'appel</dd>
+<dt>mortSerp</dt>
+<dd>booléen permettant de savoir si le serpent s'est mordu la queue ou non</dd>
+<dt>objet</dt>
+<dd>le contenu de la case où se trouve la tête du serpent</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>score</dt>
+<dd>le score</dd>
+<dt>finpartie</dt>
+<dd>booléen qui indique si la partie est finie ou non</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="detectionFruit"></span><code>procedure <b>detectionFruit</b>(objet : <a  href="Types.html#Contenus">Contenus</a>; var fruit : <a  href="Types.html#Contenus">Contenus</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de savoir si l'objet rencontré par la tête du serpent lors de son déplacement est un fruit ou pas et de retourner le fruit en question si c'est un fruit  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>l'objet rencontré par la tête du serpent</dd>
+<dt>fruit</dt>
+<dd>le fruit rencontré par le serpent (si l'objet rencontré est un fruit)</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="SelectionChar"></span><code>Function <b>SelectionChar</b>(derniereTouche : char) : char;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet la sélection de la touche du clavier par l'utilisateur tout en vérifiant qu'elle est valide </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>derniereTouche</dt>
+<dd>contient la dernière touche entrée par l'utilisateur pour l'affecter à la saisie en cours si la saisie est fausse et ainsi ne pas stopper le programme</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="selectionTouche"></span><code>procedure <b>selectionTouche</b>(var toucheDirection : char; var dir : <a  href="Types.html#Direction">Direction</a>; objet : <a  href="Types.html#Contenus">Contenus</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet de gérer tout le mécanisme de saisie de la direction de sorte à ce que la direction envoyée en sortie soit valide   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>toucheDirection</dt>
+<dd>la touche du clavier saisie par l'utilisateur</dd>
+<dt>dir</dt>
+<dd>permet d'avoir la dernière direction et de sortir la direction traitée</dd>
+<dt>objet</dt>
+<dd>l'objet rencontré par la tête du serpent pour savoir si c'est une coco et ainsi inverser les touches directionnelles</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="niveauStage"></span><code>procedure <b>niveauStage</b>(serp : <a  href="Types.Serpent.html">Serpent</a>;plateauJeu : <a  href="Types.html#Plateau">Plateau</a>;objet : <a  href="Types.html#Contenus">Contenus</a>; var scoore : <a  href="Types.Score.html">Score</a>; var xtaille,ytaille : Integer; var vitesse : Integer; var clignotement : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui gère le lancement du mécanisme de stage au sein de la partie        </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>plateauJeu</dt>
+<dd>le plateau de jeu</dd>
+<dt>objet</dt>
+<dd>l'objet rencontré par la tête du serpent pour savoir si c'est un kiwi</dd>
+<dt>scoore</dt>
+<dd>le score de la partie en cours pour pouvoir directment l'incrémenter dans le mécanisme de stage si nécessaire</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>vitesse</dt>
+<dd>la variable qui contient la valeur de la vitesse du serpent au moment de l'appel</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="jouerPartie"></span><code>procedure <b>jouerPartie</b>(vitesseEvo:Boolean;clingotement : Boolean; plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; findepartie : Boolean; vitesse : Integer; serp : <a  href="Types.Serpent.html">Serpent</a>;var xtaille, ytaille : Integer; var scoore : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure centrale qui gère le mécanisme de jeu         </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode progressif a été selectionné par le joueur ou non</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+<dt>plateauJeu</dt>
+<dd>le plateau de jeu</dd>
+<dt>findepartie</dt>
+<dd>booléen permettant de savoir quand la partie doit se terminer</dd>
+<dt>vitesse</dt>
+<dd>la vitesse de déplacement du serpent sur le plateau de jeu</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>score</dt>
+<dd>le score qui sera actualisé à chaque fois que le joueur mange un fruit</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="snake"></span><code>procedure <b>snake</b>(var fichierMeilleursScores : Text);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant de lancer une partie </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>fichierMeilleursScores</dt>
+<dd>le fichier contenant l'historique des meilleurs scores triés par ordre décroissant</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

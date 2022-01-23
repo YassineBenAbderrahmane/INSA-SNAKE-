@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Deplacement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Deplacement</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Deplacement.html#sensInterdit">sensInterdit</a></b>(dir : <a  href="Types.html#Direction">Direction</a>) : <a  href="Types.html#Direction">Direction</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="Deplacement.html#avancerCorps">avancerCorps</a></b>(coordtete : <a  href="Types.Position.html">Position</a>; var serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Deplacement.html#avancerSerpent">avancerSerpent</a></b>(xtunnel1,ytunnel1,xtunnel2,ytunnel2 : Integer;objet : <a  href="Types.html#Contenus">Contenus</a>;dir : <a  href="Types.html#Direction">Direction</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>;var coordtete : <a  href="Types.Position.html">Position</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Deplacement.html#quelObjet">quelObjet</a></b> (x , y : integer; tab:<a  href="Types.html#Plateau">plateau</a>):<a  href="Types.html#Contenus">Contenus</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Deplacement.html#collisionSerpent">collisionSerpent</a></b>(serp : <a  href="Types.Serpent.html">Serpent</a>) : Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Deplacement.html#deplacementSerpent">deplacementSerpent</a></b>(xtunnel1,ytunnel1,xtunnel2,ytunnel2 : Integer; dir : <a  href="Types.html#Direction">Direction</a>; tab:<a  href="Types.html#Plateau">plateau</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>; var objet : <a  href="Types.html#Contenus">Contenus</a>; var mortSerp: Boolean);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="sensInterdit"></span><code>function <b>sensInterdit</b>(dir : <a  href="Types.html#Direction">Direction</a>) : <a  href="Types.html#Direction">Direction</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction déterminant la direction pour laquelle le serpent de se retourne sur lui-même  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>dir</dt>
+<dd>est la direction actuelle du serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">Direction donne la direction </p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="avancerCorps"></span><code>Procedure <b>avancerCorps</b>(coordtete : <a  href="Types.Position.html">Position</a>; var serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet de faire avancer le corps de manière à ce qu'il suive la tête  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>coordtete</dt>
+<dd>les coordoonées de la tête du serpent au moment où on va effectuer le deplacement du corps</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="avancerSerpent"></span><code>procedure <b>avancerSerpent</b>(xtunnel1,ytunnel1,xtunnel2,ytunnel2 : Integer;objet : <a  href="Types.html#Contenus">Contenus</a>;dir : <a  href="Types.html#Direction">Direction</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>;var coordtete : <a  href="Types.Position.html">Position</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant de faire avancer le serpent selon la direction entrée et les coordonnées du serpent        </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtunnel1</dt>
+<dd>la coordonnée x de la première partie du tunnel</dd>
+<dt>ytunnel1</dt>
+<dd>la coordonnée y de la première partie du tunnel</dd>
+<dt>xtunnel2</dt>
+<dd>la coordonnée x de la deuxième partie du tunnel</dd>
+<dt>ytunnel2</dt>
+<dd>la coordonnée y de la deuxième partie du tunnel</dd>
+<dt>objet</dt>
+<dd>correspond à l'objet rencontrer par la tête du serpent au déplacement précédent</dd>
+<dt>dir</dt>
+<dd>est la direction entrée par l'utilisateur</dd>
+<dt>serp</dt>
+<dd>stocke les positions du corps du serpent</dd>
+<dt>coordtete</dt>
+<dd>les coordonnées de la tête du serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="quelObjet"></span><code>function <b>quelObjet</b> (x , y : integer; tab:<a  href="Types.html#Plateau">plateau</a>):<a  href="Types.html#Contenus">Contenus</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui prend des coordonnées en entré et indique quel objet se trouve sur le plateau à ces coordonnées    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>x</dt>
+<dd>coordonnée sur l'axe des X</dd>
+<dt>y</dt>
+<dd>coordonnée sur l'axe des Y</dd>
+<dt>tab</dt>
+<dd>correspond au plateau</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">Contenus informe de la nature de l'objet</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="collisionSerpent"></span><code>function <b>collisionSerpent</b>(serp : <a  href="Types.Serpent.html">Serpent</a>) : Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui contrôle si le serpent entre en collision avec l'une des parties de son corps  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>serp</dt>
+<dd>Serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le booléen permettant de savoir si il y a eu une collision ou pas</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="deplacementSerpent"></span><code>procedure <b>deplacementSerpent</b>(xtunnel1,ytunnel1,xtunnel2,ytunnel2 : Integer; dir : <a  href="Types.html#Direction">Direction</a>; tab:<a  href="Types.html#Plateau">plateau</a>; var serp : <a  href="Types.Serpent.html">Serpent</a>; var objet : <a  href="Types.html#Contenus">Contenus</a>; var mortSerp: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure permettant de déplacer le serpent, en prenant en compte la direction entrée par l'utilisateur, la vitesse de déplacement(difficulté), les coordonnées du serpent et s'il rencontre un objet de type contenu ou pas         </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtunnel1</dt>
+<dd>la coordonnée x de la première partie du tunnel</dd>
+<dt>ytunnel1</dt>
+<dd>la coordonnée y de la première partie du tunnel</dd>
+<dt>xtunnel2</dt>
+<dd>la coordonnée x de la deuxième partie du tunnel</dd>
+<dt>ytunnel2</dt>
+<dd>la coordonnée y de la deuxième partie du tunnel</dd>
+<dt>dir</dt>
+<dd>est la direction entrée par l'utilisateur</dd>
+<dt>tab</dt>
+<dd>correspond au plateau de jeu</dd>
+<dt>serp</dt>
+<dd>stocke les positions du corps du serpent</dd>
+<dt>objet</dt>
+<dd>correspond à l'objet rencontré par la tête du serpent lors de son déplacement</dd>
+<dt>mortSerp</dt>
+<dd>le booléen permettant de savoir si il y a eu une collision entre la tête du serpent et une partie de son corps</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

@@ -1,0 +1,20 @@
+*PRINCIPE DU JEU*
+
+Le joueur contrôle une longue et fine ligne semblable a un serpent, qui doit slalomer entre les bords de l'écran et les obstacles qui parsèment le niveau.
+Pour gagner des points,le joueur doit faire manger à son serpent certains fruits.
+Alors que le serpent avance inexorablement, le joueur ne peut que lui indiquer une direction à suivre (haut, bas, gauche, droite). 
+Il faut, bien-sur, éviter à tout prix que la tête du serpent ne touche les murs,  les obstacles ou son propre corps,auquel cas il risque de mourir.
+
+*SPÉCIFICATION DES DIFFÉRENTS FRUITS*
+
+Pomme    : +100 points / TAILLE +1 
+Orange   : +200 points / TAILLE +1
+Citron   : +150 points / TAILLE +1 / CLIGNOTEMENT DE L' ÉCRAN!
+Piment   : +100 points / TAILLE +1 / Allez, on accélère!
+COCO     : +150 points / TAILLE +1 / ATTENTION TOUCHES INVERSÉES!
+Substance illicite ( W comme W*** ) : +50 points/ TAILLE +1 / Ralentis donc un peu!
+Myrtille : +50 points / RENAISSANCE: Divise par 2 la taille du serpent
+Kiwi     : WHATT? Vous rentrez dans un niveau parrallèle: DO YOUR BEST!
+GOLDKIWI : Niveau parrallèle achevé avec succès!
+X : ATTENTION OBSTACLE!
++ : Tunnel

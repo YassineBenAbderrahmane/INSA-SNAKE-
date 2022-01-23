@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Initialisation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Initialisation</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Initialisation.html#initScore">initScore</a></b>(var scoore : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Initialisation.html#initSerpent">initSerpent</a></b>(xtaille, ytaille : Integer;var serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Initialisation.html#initTaillePlateau">initTaillePlateau</a></b>(var xtaille, ytaille : Integer);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Initialisation.html#initDifficulteVitesse">initDifficulteVitesse</a></b> (var vitesse : Integer; var vitesseEvo: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Initialisation.html#initPlateau">initPlateau</a></b>(xtaille,ytaille : Integer; var plateauJeu : <a  href="Types.html#Plateau">Plateau</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Initialisation.html#initPartie">initPartie</a></b>(var vitesse : Integer;var vitesseEvo:Boolean; var scoore : <a  href="Types.Score.html">Score</a>; var serp: <a  href="Types.Serpent.html">Serpent</a>; var xtaille,ytaille: Integer; var findepartie : Boolean; var plateauJeu : <a  href="Types.html#Plateau">Plateau</a>;var clignotement : Boolean);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initScore"></span><code>procedure <b>initScore</b>(var scoore : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'initialiser le score de la partie à 0 et de donner un Nom au joueur </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>score</dt>
+<dd>le score qui sera actualisé à chaque fois que le joueur mange un fruit</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initSerpent"></span><code>procedure <b>initSerpent</b>(xtaille, ytaille : Integer;var serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'initialiser le serpent en intialisant la taille de son corps à 1 et en positionnant le premier morceau du corps au centre du plateau de jeu.   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initTaillePlateau"></span><code>procedure <b>initTaillePlateau</b>(var xtaille, ytaille : Integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'initialiser la taille du plateau de jeu en demandant à l'utilisateur de choisir entre 3 niveaux.  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initDifficulteVitesse"></span><code>procedure <b>initDifficulteVitesse</b> (var vitesse : Integer; var vitesseEvo: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'initialiser la vitesse de déplacement du serpent.  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesse</dt>
+<dd>la vitesse de déplacement du serpent sur le plateau de jeu qui correspond en fait au nombre de millisecondes entre chaque affichage des éléments</dd>
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode progressif a été selectionné par le joueur ou non</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initPlateau"></span><code>procedure <b>initPlateau</b>(xtaille,ytaille : Integer; var plateauJeu : <a  href="Types.html#Plateau">Plateau</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'initialiser la plateau de jeu en intialisant toutes les cases à vide.   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>plateauJeu</dt>
+<dd>le plateau</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initPartie"></span><code>procedure <b>initPartie</b>(var vitesse : Integer;var vitesseEvo:Boolean; var scoore : <a  href="Types.Score.html">Score</a>; var serp: <a  href="Types.Serpent.html">Serpent</a>; var xtaille,ytaille: Integer; var findepartie : Boolean; var plateauJeu : <a  href="Types.html#Plateau">Plateau</a>;var clignotement : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'initialiser la partie en réalisant successivement les différentes initialisations nécessaires au lancement d'une partie        </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesse</dt>
+<dd>la vitesse de déplacement du serpent sur le plateau de jeu</dd>
+<dt>score</dt>
+<dd>le score qui sera actualisé à chaque fois que le joueur mange un fruit</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>findepartie</dt>
+<dd>variable booléenne qui permet de savoir si la partie est terminée ou pas</dd>
+<dt>plateauJeu</dt>
+<dd>le plateau de jeu</dd>
+<dt>clignotement</dt>
+<dd>variable booléenne qui permet de savoir si on doit faire clignoter les éléments à l'affichage</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

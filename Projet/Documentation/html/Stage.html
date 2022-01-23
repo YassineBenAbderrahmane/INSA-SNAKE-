@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Stage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Stage</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Stage.html#Char2Contenus">Char2Contenus</a></b>( lue : char ) : <a  href="Types.html#Contenus">contenus</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="Stage.html#RemplirPlateauSTAGE">RemplirPlateauSTAGE</a></b>(var plateauJeuStage:<a  href="Types.html#Plateau">Plateau</a>; var fichierSTAGE: Text; nomFichier : String);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Stage.html#initStage">initStage</a></b>(var xtaille,ytaille : Integer; var vitesse : Integer; var clignotement,findepartieStage : Boolean; var serpNiveauParallele : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Stage.html#estMortStage">estMortStage</a></b>(objet :<a  href="Types.html#Contenus">Contenus</a>; var finpartieStage : Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Stage.html#jouerPartieStage">jouerPartieStage</a></b>(clingotement : Boolean; plateauJeuStage : <a  href="Types.html#Plateau">Plateau</a>; findepartieStage : Boolean; vitesse : Integer; serpNiveauParallele : <a  href="Types.Serpent.html">Serpent</a>; xtaille, ytaille : Integer; var scoore : <a  href="Types.Score.html">Score</a>; var objetFinal : <a  href="Types.html#Contenus">Contenus</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Stage.html#traitementObjetFinal">traitementObjetFinal</a></b>(var objetFinal : <a  href="Types.html#Contenus">Contenus</a>; var scoore : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Stage.html#choixFichierStage">choixFichierStage</a></b>() : string;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Stage.html#jouerStage">jouerStage</a></b>(xtaille,ytaille : Integer; vitesse : Integer; clignotement,findepartieStage : Boolean; var scoore : <a  href="Types.Score.html">Score</a>; serpNiveauParallele : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Char2Contenus"></span><code>function <b>Char2Contenus</b>( lue : char ) : <a  href="Types.html#Contenus">contenus</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet transformer un carcatère en un contenu  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>lue</dt>
+<dd>le caracète lu</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le contenu correspondant au caractère lu</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="RemplirPlateauSTAGE"></span><code>Procedure <b>RemplirPlateauSTAGE</b>(var plateauJeuStage:<a  href="Types.html#Plateau">Plateau</a>; var fichierSTAGE: Text; nomFichier : String);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui va permettre de remplir un plateau de jeu de stage à partir d'un fichier texte contenant la carte du stage sous forme de caractères   (nomFichier le nom du fichier que l'on souhaite lire</p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>plateauJeuStage</dt>
+<dd>la plteau de jeu du stage que l'on veut remplir</dd>
+<dt>fichierSTAGE</dt>
+<dd>la variable qui va contenir le fichier que l'on souhaite lire</dd>
+<dt></dt>
+<dd></dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="initStage"></span><code>procedure <b>initStage</b>(var xtaille,ytaille : Integer; var vitesse : Integer; var clignotement,findepartieStage : Boolean; var serpNiveauParallele : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet d'intialiser le stage       </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>vitesse</dt>
+<dd>la vitesse de déplacement du serpent sur le plateau de jeu</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+<dt>findepartieStage</dt>
+<dd>booléen permettant de savoir quand le stage doit se terminer</dd>
+<dt>scoore</dt>
+<dd>le score</dd>
+<dt>serpNiveauParallele</dt>
+<dd>le serpent qui va être utilisé pour jouer le stage</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="estMortStage"></span><code>procedure <b>estMortStage</b>(objet :<a  href="Types.html#Contenus">Contenus</a>; var finpartieStage : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui va permettre de gérer la fin du stage en cas de collision avec un mur ou un obstacle  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>l'objet rencontré par la tête du serpent</dd>
+<dt>finpartieStage</dt>
+<dd>booléen permettant de savoir quand le stage doit se terminer</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="jouerPartieStage"></span><code>procedure <b>jouerPartieStage</b>(clingotement : Boolean; plateauJeuStage : <a  href="Types.html#Plateau">Plateau</a>; findepartieStage : Boolean; vitesse : Integer; serpNiveauParallele : <a  href="Types.Serpent.html">Serpent</a>; xtaille, ytaille : Integer; var scoore : <a  href="Types.Score.html">Score</a>; var objetFinal : <a  href="Types.html#Contenus">Contenus</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui gère le déroulement du stage        </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+<dt>plateauJeuStage</dt>
+<dd>le plateau de jeu utilisé pour le stage</dd>
+<dt>finpartieStage</dt>
+<dd>booléen permettant de savoir quand le stage doit se terminer</dd>
+<dt>vitesse</dt>
+<dd>la vitesse de déplacement du serpent sur le plateau de jeu</dd>
+<dt>serpNiveauParallele</dt>
+<dd>le serpent qui va être utilisé pour jouer le stage</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>objetFinal</dt>
+<dd>le dernier objet rencontré par la tête du serpent afin de regarder si c'est un kiwi en or</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="traitementObjetFinal"></span><code>procedure <b>traitementObjetFinal</b>(var objetFinal : <a  href="Types.html#Contenus">Contenus</a>; var scoore : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet de gérer la fin de partie dans le cas où le serpent parvient à atteindre le kiwi en or  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objetFinal</dt>
+<dd>le dernier objet rencontré par la tête du serpent afin de regarder si c'est un kiwi en or</dd>
+<dt>scoore</dt>
+<dd>le score</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="choixFichierStage"></span><code>function <b>choixFichierStage</b>() : string;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet de tirer aléatoirement un nom de fichier parmi les 7 disponibles @retunrs(nomFichier le nom du fichier choisi aléatoirement)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="jouerStage"></span><code>procedure <b>jouerStage</b>(xtaille,ytaille : Integer; vitesse : Integer; clignotement,findepartieStage : Boolean; var scoore : <a  href="Types.Score.html">Score</a>; serpNiveauParallele : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui gère le mécanisme de jeu du stage       </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>vitesse</dt>
+<dd>la vitesse de déplacement du serpent sur le plateau de jeu</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+<dt>findepartieStage</dt>
+<dd>booléen permettant de savoir quand le stage doit se terminer</dd>
+<dt>scoore</dt>
+<dd>le score</dd>
+<dt>serpNiveauParallele</dt>
+<dd>le serpent qui va être utilisé pour jouer le stage</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

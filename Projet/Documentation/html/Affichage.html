@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Affichage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Affichage</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Affichage.html#objet2Caractere">objet2Caractere</a></b>(objet : <a  href="Types.html#Contenus">Contenus</a>; clignotement: Boolean) : Char;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#affichaage">affichaage</a></b>(plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; score : <a  href="Types.Score.html">Score</a>; serp : <a  href="Types.Serpent.html">Serpent</a>; xtaille,ytaille : Integer;clignotement : Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#afficherSerpent">afficherSerpent</a></b>(serp : <a  href="Types.Serpent.html">Serpent</a>; clignotement : Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#afficherLegende">afficherLegende</a></b>();</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#afficherPlateau">afficherPlateau</a></b>(plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; xtaille,ytaille : Integer; clignotement : Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#afficherScore">afficherScore</a></b>(score : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#AfficherMenuuuuu">AfficherMenuuuuu</a></b>();</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Affichage.html#afficherReglesDuJeu">afficherReglesDuJeu</a></b>(var reglesDuJeu : Text);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="Affichage.html#AfficherMeilleursScores">AfficherMeilleursScores</a></b> (var fichierMeilleursScores: Text);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="objet2Caractere"></span><code>function <b>objet2Caractere</b>(objet : <a  href="Types.html#Contenus">Contenus</a>; clignotement: Boolean) : Char;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction permettant de sortir le carctère ainsi que la &quot;mise en page&quot; (couleur + clignotement) correspondant à l'objet passé en entrée pour pouvoir afficher les éléments   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>objet</dt>
+<dd>contenu de la case que l'on souhaite afficher</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">la caractère correspond à l'objet passé en entrée avec la mise en page correspondante</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="affichaage"></span><code>procedure <b>affichaage</b>(plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; score : <a  href="Types.Score.html">Score</a>; serp : <a  href="Types.Serpent.html">Serpent</a>; xtaille,ytaille : Integer;clignotement : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant l'affichage complet de tous les éléments nécessaires au jeu (la plateau et ses éléments, le score et le serpent)      </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>plateauJeu</dt>
+<dd>le plateau</dd>
+<dt>score</dt>
+<dd>le score qui sera actualise à chaque fois que le joueur mange un fruit</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="afficherSerpent"></span><code>procedure <b>afficherSerpent</b>(serp : <a  href="Types.Serpent.html">Serpent</a>; clignotement : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant l'affichage du serpent &quot;sur le plateau de jeu&quot; (en effet on superpose l'affichage du plateau et celui du serpent au même endroit  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="afficherLegende"></span><code>procedure <b>afficherLegende</b>();</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant l'affichage de la légende avec les fruits</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="afficherPlateau"></span><code>procedure <b>afficherPlateau</b>(plateauJeu : <a  href="Types.html#Plateau">Plateau</a>; xtaille,ytaille : Integer; clignotement : Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Procédure permettant d'afficher le plateau de jeu    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>plateauJeu</dt>
+<dd>le plateau</dd>
+<dt>xtaille</dt>
+<dd>la taille du plateau sur l'axe horizontal (nombre de colonnes du tableau représentant le plateau)</dd>
+<dt>ytaille</dt>
+<dd>la taille du plateau sur l'axe vertical (nombre de lignes du tableau représentant le plateau)</dd>
+<dt>clignotement</dt>
+<dd>la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="afficherScore"></span><code>procedure <b>afficherScore</b>(score : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'afficher le score </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>score</dt>
+<dd>le score qui sera actualisé à chaque fois que le joueur mange un fruit</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="AfficherMenuuuuu"></span><code>procedure <b>AfficherMenuuuuu</b>();</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'afficher le menu principal</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="afficherReglesDuJeu"></span><code>procedure <b>afficherReglesDuJeu</b>(var reglesDuJeu : Text);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'afficher les règles du jeu </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>reglesDuJeu</dt>
+<dd>le fichier contenant les règles du jeu</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="AfficherMeilleursScores"></span><code>Procedure <b>AfficherMeilleursScores</b> (var fichierMeilleursScores: Text);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure permettant d'afficher les meilleurs scores </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>fichierMeilleursScores</dt>
+<dd>le fichier contenant l'historique des meilleurs scores triés par ordre décroissant</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

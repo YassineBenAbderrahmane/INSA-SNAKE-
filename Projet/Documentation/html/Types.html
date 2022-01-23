@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Types</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Types</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section"><a class="section" href="#PasDoc-Classes">Classes, interfaces, enregistrements et objets</a></div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section"><a class="section" href="#PasDoc-Types">Types</a></div><div class="one_section"><a class="section" href="#PasDoc-Constants">Constantes</a></div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-Classes"></span><h3 class="cio">Classes, interfaces, enregistrements et objets</h3>
+<table class="classestable wide_list">
+<tr class="listheader">
+<th class="itemname">Nom</th>
+<th class="itemdesc">Description</th>
+</tr>
+<tr class="list">
+<td class="itemname">Enregistrement&nbsp;<a class="bold" href="Types.Position.html"><code>Position</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+<tr class="list2">
+<td class="itemname">Enregistrement&nbsp;<a class="bold" href="Types.Serpent.html"><code>Serpent</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+<tr class="list">
+<td class="itemname">Enregistrement&nbsp;<a class="bold" href="Types.Score.html"><code>Score</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+</table>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Types.html#obtenirCoordonneeX">obtenirCoordonneeX</a></b>(coordonnees : <a  href="Types.Position.html">Position</a>): Integer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Types.html#obtenirCoordonneeY">obtenirCoordonneeY</a></b>(coordonnees : <a  href="Types.Position.html">Position</a>): Integer;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Types.html#fixerCoordonneeX">fixerCoordonneeX</a></b>(x : Integer; var coordonnees : <a  href="Types.Position.html">Position</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Types.html#fixerCoordonneeY">fixerCoordonneeY</a></b>(y : Integer;var coordonnees : <a  href="Types.Position.html">Position</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Types.html#obtenirTailleSerpent">obtenirTailleSerpent</a></b>(serp : <a  href="Types.Serpent.html">Serpent</a>): Integer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Types.html#obtenirCoordonneesCorpsSerpent">obtenirCoordonneesCorpsSerpent</a></b>(serp : <a  href="Types.Serpent.html">Serpent</a>; indice : Integer): <a  href="Types.Position.html">Position</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Types.html#fixerTailleSerpent">fixerTailleSerpent</a></b>(tailleserp : Integer; var serp : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Types.html#fixerCoordonneesCorpsSerpent">fixerCoordonneesCorpsSerpent</a></b>(coordonneesCorpsX,coordonneesCorpsY : Integer; indice : Integer; var serp : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Types.html#fixerPointScore">fixerPointScore</a></b>(point : Integer; var Ajout : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Types.html#fixerNomScore">fixerNomScore</a></b>(name : String; var Ajout : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Types.html#obtenirPointScore">obtenirPointScore</a></b>(Ajout: <a  href="Types.Score.html">Score</a>): integer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Types.html#obtenirNomScore">obtenirNomScore</a></b>(Ajout:<a  href="Types.Score.html">Score</a>):String;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Types"></span><h3 class="summary">Types</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#Contenus">Contenus</a></b> = (...);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Types.html#Plateau">Plateau</a></b> = Array [1..<a  href="Types.html#XMAX">XMAX</a>,1..<a  href="Types.html#YMAX">YMAX</a>] of <a  href="Types.html#Contenus">Contenus</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#Direction">Direction</a></b> = (...);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Types.html#TableauDeScore">TableauDeScore</a></b> = array[1..10] of <a  href="Types.Score.html">Score</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#TableauMenu">TableauMenu</a></b> = Array [1..<a  href="Types.html#MAXITEMS">MAXITEMS</a>] of String;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Constants"></span><h3 class="summary">Constantes</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#XMAX">XMAX</a></b> = 50;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Types.html#YMAX">YMAX</a></b> = 50;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#MAXTAILLE">MAXTAILLE</a></b> = 100;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Types.html#MAXITEMS">MAXITEMS</a></b> = 4;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#UpKey">UpKey</a></b>=#122;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Types.html#DownKey">DownKey</a></b>=#115;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Types.html#RightKey">RightKey</a></b>=#100;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Types.html#LeftKey">LeftKey</a></b>=#113;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="obtenirCoordonneeX"></span><code>function <b>obtenirCoordonneeX</b>(coordonnees : <a  href="Types.Position.html">Position</a>): Integer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet d'accéder à la coordonnée x d'une variable de type Position  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>coordonnees</dt>
+<dd>variable de type Positon contenant une coordonnée x et une coordonnée y</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">l'entier correspondant à la coordonnée x de la variable de type Position</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="obtenirCoordonneeY"></span><code>function <b>obtenirCoordonneeY</b>(coordonnees : <a  href="Types.Position.html">Position</a>): Integer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet d'accéder à la coordonnée y d'une variable de type Position  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>coordonnees</dt>
+<dd>variable de type Positon contenant une coordonnée x et une coordonnée y</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">l'entier correspondant à la coordonnée y de la variable de type Position</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="fixerCoordonneeX"></span><code>procedure <b>fixerCoordonneeX</b>(x : Integer; var coordonnees : <a  href="Types.Position.html">Position</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de fixer la coordonnée x d'une variable coordonnées de type Position  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>x</dt>
+<dd>l'entier correspondant à ce que l'on veut fixer</dd>
+<dt>coordonnees</dt>
+<dd>variable de type Positon contenant une coordonnée x et une coordonnée y</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="fixerCoordonneeY"></span><code>procedure <b>fixerCoordonneeY</b>(y : Integer;var coordonnees : <a  href="Types.Position.html">Position</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de fixer la coordonnée y d'une variable coordonnées de type Position  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>y</dt>
+<dd>l'entier correspondant à ce que l'on veut fixer</dd>
+<dt>coordonnees</dt>
+<dd>variable de type Positon contenant une coordonnée x et une coordonnée y</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="obtenirTailleSerpent"></span><code>function <b>obtenirTailleSerpent</b>(serp : <a  href="Types.Serpent.html">Serpent</a>): Integer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet d'obtenir la taille du serpent passé en entrée  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">l'entier correspondant à la taille du serpent passé en entrée</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="obtenirCoordonneesCorpsSerpent"></span><code>function <b>obtenirCoordonneesCorpsSerpent</b>(serp : <a  href="Types.Serpent.html">Serpent</a>; indice : Integer): <a  href="Types.Position.html">Position</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet d'obtenir une variable de type Position contenant les coordonnées du morceau du serpent correspondant à l'indice demandé   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>indice</dt>
+<dd>le numéro du morceau du serpent correspondant à l'indice de la case du tableau contenant les coordonnées des morceaux du serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">les coordonnées de type Position contenant une coordonnée x et une coordonnée y</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="fixerTailleSerpent"></span><code>procedure <b>fixerTailleSerpent</b>(tailleserp : Integer; var serp : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de fixer la taille du serpent  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>tailleserp</dt>
+<dd>la taille que l'on souhaite donner au serpent</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="fixerCoordonneesCorpsSerpent"></span><code>procedure <b>fixerCoordonneesCorpsSerpent</b>(coordonneesCorpsX,coordonneesCorpsY : Integer; indice : Integer; var serp : <a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de fixer les coordonées x et y d'un morceau du serpent    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>coordonneesCorpsX</dt>
+<dd>la coordonnée x que l'on souhaite donner au morceau</dd>
+<dt>coordonneesCorpsY</dt>
+<dd>la coordonnée y que l'on souhaite donner au morceau</dd>
+<dt>indice</dt>
+<dd>le numéro du morceau du serpent correspondant à l'indice de la case du tableau contenant les coordonnées des morceaux du serpent</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="fixerPointScore"></span><code>procedure <b>fixerPointScore</b>(point : Integer; var Ajout : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de fixer les points du score  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>point</dt>
+<dd>le nombre de points que l'on souhaite donner au score</dd>
+<dt>Ajout</dt>
+<dd>la variable de type score sur laquelle on veut modifier le nombre de points</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="fixerNomScore"></span><code>procedure <b>fixerNomScore</b>(name : String; var Ajout : <a  href="Types.Score.html">Score</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de fixer le nom de joueur à une variable de type score  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>name</dt>
+<dd>le nom que l'on souhaite donner</dd>
+<dt>Ajout</dt>
+<dd>la variable de type score sur laquelle on veut modifier le nom</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="obtenirPointScore"></span><code>function <b>obtenirPointScore</b>(Ajout: <a  href="Types.Score.html">Score</a>): integer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet d'obtenir le nombre de point d'une variable de type score  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>Ajout</dt>
+<dd>la variable de type score dont on veut connaître le nombre de points associé</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le nombre de points</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="obtenirNomScore"></span><code>function <b>obtenirNomScore</b>(Ajout:<a  href="Types.Score.html">Score</a>):String;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui permet d'obtenir le nom associé à une variable de type score  </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>Ajout</dt>
+<dd>la variable de type score dont on veut connaître le nom associé à cette variable</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le nom</p></td></tr>
+</table>
+<h3 class="detail">Types</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Contenus"></span><code><b>Contenus</b> = (...);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;<h6 class="description_section">Valeurs</h6>
+<ul>
+<li>
+<span id="pomme">pomme</span></li>
+<li>
+<span id="orange">orange</span></li>
+<li>
+<span id="citron">citron</span></li>
+<li>
+<span id="piment">piment</span></li>
+<li>
+<span id="weed">weed</span></li>
+<li>
+<span id="coco">coco</span></li>
+<li>
+<span id="myrtille">myrtille</span></li>
+<li>
+<span id="kiwi">kiwi</span></li>
+<li>
+<span id="goldkiwi">goldkiwi</span></li>
+<li>
+<span id="mur">mur</span></li>
+<li>
+<span id="vide">vide</span></li>
+<li>
+<span id="obstacle">obstacle</span></li>
+<li>
+<span id="tunnel1">tunnel1</span></li>
+<li>
+<span id="tunnel2">tunnel2</span></li>
+</ul>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Plateau"></span><code><b>Plateau</b> = Array [1..<a  href="Types.html#XMAX">XMAX</a>,1..<a  href="Types.html#YMAX">YMAX</a>] of <a  href="Types.html#Contenus">Contenus</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Direction"></span><code><b>Direction</b> = (...);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;<h6 class="description_section">Valeurs</h6>
+<ul>
+<li>
+<span id="up">up</span></li>
+<li>
+<span id="down">down</span></li>
+<li>
+<span id="right">right</span></li>
+<li>
+<span id="left">left</span></li>
+</ul>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="TableauDeScore"></span><code><b>TableauDeScore</b> = array[1..10] of <a  href="Types.Score.html">Score</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="TableauMenu"></span><code><b>TableauMenu</b> = Array [1..<a  href="Types.html#MAXITEMS">MAXITEMS</a>] of String;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Constantes</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="XMAX"></span><code><b>XMAX</b> = 50;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="YMAX"></span><code><b>YMAX</b> = 50;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="MAXTAILLE"></span><code><b>MAXTAILLE</b> = 100;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="MAXITEMS"></span><code><b>MAXITEMS</b> = 4;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="UpKey"></span><code><b>UpKey</b>=#122;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="DownKey"></span><code><b>DownKey</b>=#115;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="RightKey"></span><code><b>RightKey</b>=#100;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="LeftKey"></span><code><b>LeftKey</b>=#113;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

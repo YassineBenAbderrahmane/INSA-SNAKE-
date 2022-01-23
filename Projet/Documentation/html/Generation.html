@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Generation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité Generation</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Generation.html#randomFruit">randomFruit</a></b> ():<a  href="Types.html#Contenus">Contenus</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Generation.html#RechercherObjet">RechercherObjet</a></b> (var tab : <a  href="Types.html#Plateau">plateau</a>; xtaille, ytaille: integer ;objet : <a  href="Types.html#Contenus">Contenus</a>;var Xobjet, Yobjet: integer; var ObjetPresent:boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Generation.html#DansPlateau">DansPlateau</a></b> (x,y, xtaille ,ytaille :integer):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Generation.html#randomDistance">randomDistance</a></b> ():integer;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Generation.html#NoSerpent">NoSerpent</a></b> (x, y :integer; serp: <a  href="Types.Serpent.html">Serpent</a>):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Generation.html#NoTeteSerpent">NoTeteSerpent</a></b> (x,y :integer; serp:<a  href="Types.Serpent.html">Serpent</a>): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Generation.html#genererFruit">genererFruit</a></b> (var tab:<a  href="Types.html#Plateau">Plateau</a>; xtaille,ytaille: integer; serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Generation.html#genererObstacle">genererObstacle</a></b> ( xtaille, ytaille : integer; serp:<a  href="Types.Serpent.html">Serpent</a> ;var tab : <a  href="Types.html#Plateau">Plateau</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Generation.html#genererTunnel">genererTunnel</a></b> ( xtaille, ytaille : integer; serp:<a  href="Types.Serpent.html">Serpent</a>; var tab : <a  href="Types.html#Plateau">Plateau</a>; var xtunnel1, ytunnel1, xtunnel2,ytunnel2:integer);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="randomFruit"></span><code>function <b>randomFruit</b> ():<a  href="Types.html#Contenus">Contenus</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui génère un fruit parmis la pomme l'orange et le citron, chaque fruit possède une certaine probabilité d'apparition </p>
+<h6 class="description_section">Retourne</h6>
+<p class="return">Contenus informe de la nature de l'objet</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="RechercherObjet"></span><code>procedure <b>RechercherObjet</b> (var tab : <a  href="Types.html#Plateau">plateau</a>; xtaille, ytaille: integer ;objet : <a  href="Types.html#Contenus">Contenus</a>;var Xobjet, Yobjet: integer; var ObjetPresent:boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui permet de rechercher un objet sur le plateau, savoir s'il est présent sur le plateau, et s'il est présent, connaître ses coordonnées.       </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>tab</dt>
+<dd>correspond au plateau</dd>
+<dt>xtaille</dt>
+<dd>taille en x du plateau</dd>
+<dt>ytaille</dt>
+<dd>taille en y du plateau</dd>
+<dt>objet</dt>
+<dd>correspond à l'objet dont on veut connaître la présence et les coordonnées sur le plateau</dd>
+<dt>Xobjet</dt>
+<dd>coordonnée x de l'objet recherché</dd>
+<dt>Yobjet</dt>
+<dd>coordonnée y de l'objet recherché</dd>
+<dt>ObjetPresent</dt>
+<dd>variable booléenne qui stocke si l'objet recherché est présent ou pas sur le plateau de jeu</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="DansPlateau"></span><code>function <b>DansPlateau</b> (x,y, xtaille ,ytaille :integer):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui contrôle si les coordonnées font partis du plateau     </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>x</dt>
+<dd>coordonnée</dd>
+<dt>y</dt>
+<dd>coordonnée</dd>
+<dt>xtaille</dt>
+<dd>taille en x du plateau</dd>
+<dt>ytaille</dt>
+<dd>taille en y du plateau</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le booléen permettant de savoir si les coordonnées sont dans le plateau</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="randomDistance"></span><code>function <b>randomDistance</b> ():integer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui génère un naturel entre -2 et +2 </p>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le naturel qui servira de distance</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="NoSerpent"></span><code>function <b>NoSerpent</b> (x, y :integer; serp: <a  href="Types.Serpent.html">Serpent</a>):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui vérifie que le serpent n'occupe pas les coordonnées fournis en entrée    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>x</dt>
+<dd>coordonnée</dd>
+<dt>y</dt>
+<dd>coordonnée</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le booléen permettant de savoir si le serpent est sur ces coordonnées ou non</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="NoTeteSerpent"></span><code>function <b>NoTeteSerpent</b> (x,y :integer; serp:<a  href="Types.Serpent.html">Serpent</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction qui vérifie que la tete du serpent n'est pas proche des coordonnées fournis en entrée    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>x</dt>
+<dd>coordonnée</dd>
+<dt>y</dt>
+<dd>coordonnée</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+<h6 class="description_section">Retourne</h6>
+<p class="return">le booléen permettant de savoir si le serpent est sur ces coordonnées ou non</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="genererFruit"></span><code>procedure <b>genererFruit</b> (var tab:<a  href="Types.html#Plateau">Plateau</a>; xtaille,ytaille: integer; serp:<a  href="Types.Serpent.html">Serpent</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui génère un fruit et le place sur le plateau en vérifiant que l'espace est bien vide    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>tab</dt>
+<dd>correspond au plateau</dd>
+<dt>xtaille</dt>
+<dd>taille en x du plateau</dd>
+<dt>ytaille</dt>
+<dd>taille en y du plateau</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="genererObstacle"></span><code>procedure <b>genererObstacle</b> ( xtaille, ytaille : integer; serp:<a  href="Types.Serpent.html">Serpent</a> ;var tab : <a  href="Types.html#Plateau">Plateau</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui génère un obstacle et le place sur le plateau en vérifiant que l'espace est bien vide    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>taille en x du plateau</dd>
+<dt>ytaille</dt>
+<dd>taille en y du plateau</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>tab</dt>
+<dd>correspond au plateau</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="genererTunnel"></span><code>procedure <b>genererTunnel</b> ( xtaille, ytaille : integer; serp:<a  href="Types.Serpent.html">Serpent</a>; var tab : <a  href="Types.html#Plateau">Plateau</a>; var xtunnel1, ytunnel1, xtunnel2,ytunnel2:integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procédure qui génère les deux portes du tunnel et les place sur une partie distincte du plateau en vérifiant que l'espace est bien vide        </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>xtaille</dt>
+<dd>taille en x du plateau</dd>
+<dt>ytaille</dt>
+<dd>taille en y du plateau</dd>
+<dt>serp</dt>
+<dd>le serpent</dd>
+<dt>tab</dt>
+<dd>correspond au plateau</dd>
+<dt>xtunnel1</dt>
+<dd>coordonnée en x de la porte 1</dd>
+<dt>ytunnel1</dt>
+<dd>coordonnée en y de la porte 1</dd>
+<dt>xtunnel2</dt>
+<dd>coordonnée en x de la porte 2</dd>
+<dt>ytunnel2</dt>
+<dd>coordonnée en y de la porte 2</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

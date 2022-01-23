@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>GestionScore</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité GestionScore</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, interfaces, enregistrements et objets</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section">Constantes</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="GestionScore.html#ChargerScores">ChargerScores</a></b>(vitesseEvo:Boolean;vitesse : Integer; var TabScore : <a  href="Types.html#TableauDeScore">TableauDeScore</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="GestionScore.html#actualiserMeilleursScores">actualiserMeilleursScores</a></b>( vitesseEvo:Boolean;vitesse : Integer; Nbpoint : Integer; nomJoueur : String; var TabScore : <a  href="Types.html#TableauDeScore">TableauDeScore</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="GestionScore.html#EcrireFichierTexte">EcrireFichierTexte</a></b> (vitesseEvo:Boolean; vitesse : Integer; TabScore : <a  href="Types.html#TableauDeScore">TableauDeScore</a> ; var fichierMeilleursScores : Text);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="ChargerScores"></span><code>procedure <b>ChargerScores</b>(vitesseEvo:Boolean;vitesse : Integer; var TabScore : <a  href="Types.html#TableauDeScore">TableauDeScore</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Procedure permettant de charger les scores en provenance du fichier texte Score.txt dans un tableau   </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non</dd>
+<dt>vitesse</dt>
+<dd>: vitesse dont le joueur veut voir les scores</dd>
+<dt>TabScore</dt>
+<dd>: le tableau ou sont charges les scores</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="actualiserMeilleursScores"></span><code>procedure <b>actualiserMeilleursScores</b>( vitesseEvo:Boolean;vitesse : Integer; Nbpoint : Integer; nomJoueur : String; var TabScore : <a  href="Types.html#TableauDeScore">TableauDeScore</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Procedure permettant d'actualiser le tableau de score (trié)    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non</dd>
+<dt>Nbpoint</dt>
+<dd>: le nombre de point obtenu par le jouer lors de la partie</dd>
+<dt>nomJoueur</dt>
+<dd>: le nom du joueur venant de faire une partie</dd>
+<dt>TabScore</dt>
+<dd>: le tableau ou sont charges les scores</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="EcrireFichierTexte"></span><code>procedure <b>EcrireFichierTexte</b> (vitesseEvo:Boolean; vitesse : Integer; TabScore : <a  href="Types.html#TableauDeScore">TableauDeScore</a> ; var fichierMeilleursScores : Text);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Procedure qui permet d'écrire les nouveaux scores dans le fichier texte correspondant    </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>vitesseEvo</dt>
+<dd>booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non</dd>
+<dt>vitesse</dt>
+<dd>: vitesse de la partie préalablement jouée</dd>
+<dt>TabScore</dt>
+<dd>: le tableau de score à retranscrir dans le fichier texte</dd>
+<dt>fichierMeilleursScores</dt>
+<dd>: le fichier texte dans lequel nous écrivons les nouveaux scores</dd>
+</dl>
+</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>LesMenus</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.15.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<p><a href="AllUnits.html" class="navigation">Unités</a></p><p><a href="ClassHierarchy.html" class="navigation">Hiérarchie des classes</a></p><p><a href="AllClasses.html" class="navigation">Classes, interfaces, enregistrements et objets</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constantes</a></p><p><a href="AllFunctions.html" class="navigation">Fonctions et procédures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identificateurs</a></p></td><td class="content">
+<h1 class="unit">Unité LesMenus</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section"><a class="section" href="#PasDoc-Classes">Classes, interfaces, enregistrements et objets</a></div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Fonctions et procédures</a></div><div class="one_section">Types</div><div class="one_section"><a class="section" href="#PasDoc-Constants">Constantes</a></div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+&nbsp;<span id="PasDoc-Uses"></span><h2 class="overview">Aperçu</h2>
+<span id="PasDoc-Classes"></span><h3 class="cio">Classes, interfaces, enregistrements et objets</h3>
+<table class="classestable wide_list">
+<tr class="listheader">
+<th class="itemname">Nom</th>
+<th class="itemdesc">Description</th>
+</tr>
+<tr class="list">
+<td class="itemname">Objet&nbsp;<a class="bold" href="LesMenus.TMainMenu.html"><code>TMainMenu</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+</table>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Fonctions et procédures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="LesMenus.html#Selection">Selection</a></b>() : Char;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="LesMenus.html#AfficheSousMenu">AfficheSousMenu</a></b>(Curseur : Integer; MenuItem: <a  href="Types.html#TableauMenu">TableauMenu</a>; TotalItems : Integer);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="LesMenus.html#Navigation">Navigation</a></b>(Selection : Char; Cur : Integer; TotalItems : Integer) : Integer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="LesMenus.html#MenuVitesse">MenuVitesse</a></b> (var choixVitesse:integer);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="LesMenus.html#MenuTaille">MenuTaille</a></b> (var choixTaille : integer);</code></td>
+</tr>
+</table>
+<span id="PasDoc-Constants"></span><h3 class="summary">Constantes</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="LesMenus.html#MenuXofs">MenuXofs</a></b> = 10;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="LesMenus.html#MenuYofs">MenuYofs</a></b> = 2;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="LesMenus.html#SelectedFC">SelectedFC</a></b> = White;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="LesMenus.html#SelectedBC">SelectedBC</a></b> = LightCyan;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="LesMenus.html#NormalFC">NormalFC</a></b> = LightGray;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="LesMenus.html#NormalBC">NormalBC</a></b> = Black;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="LesMenus.html#SelectorLargeur">SelectorLargeur</a></b> = 50;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="LesMenus.html#UpKey">UpKey</a></b> = #80;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="LesMenus.html#DownKey">DownKey</a></b> = #72;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="LesMenus.html#EscKey">EscKey</a></b> = #27;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="LesMenus.html#CRKey">CRKey</a></b> = #13;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fonctions et procédures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Selection"></span><code>Function <b>Selection</b>() : Char;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fonction GetSelectionner qui Renvoit à la fin 'Selectionner'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="AfficheSousMenu"></span><code>Procedure <b>AfficheSousMenu</b>(Curseur : Integer; MenuItem: <a  href="Types.html#TableauMenu">TableauMenu</a>; TotalItems : Integer);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="Navigation"></span><code>Function <b>Navigation</b>(Selection : Char; Cur : Integer; TotalItems : Integer) : Integer;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="MenuVitesse"></span><code>procedure <b>MenuVitesse</b> (var choixVitesse:integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet d'afficher le sous menu pour la sélection de la vitesse du serpent </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>choixVitesse</dt>
+<dd>entier correspondant au numéro du choix de l'utilisateur</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="MenuTaille"></span><code>procedure <b>MenuTaille</b> (var choixTaille : integer);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+procedure qui permet d'afficher le sous menu pour la sélection de la taille du plateau </p>
+<h6 class="description_section">Paramètres</h6>
+<dl class="parameters">
+<dt>choixTaille</dt>
+<dd>entier correspondant au numéro du choix de l'utilisateur</dd>
+</dl>
+</td></tr>
+</table>
+<h3 class="detail">Constantes</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="MenuXofs"></span><code><b>MenuXofs</b> = 10;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Place la barre de menu selon l'axe X et Y</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="MenuYofs"></span><code><b>MenuYofs</b> = 2;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="SelectedFC"></span><code><b>SelectedFC</b> = White;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Couleur de premier et dernier plan</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="SelectedBC"></span><code><b>SelectedBC</b> = LightCyan;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+couleur de texte pour objet sélectionné</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="NormalFC"></span><code><b>NormalFC</b> = LightGray;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+couleur de fond pour objet sélectionné</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="NormalBC"></span><code><b>NormalBC</b> = Black;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+couleur de premier plan pour objet non sélectionné</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="SelectorLargeur"></span><code><b>SelectorLargeur</b> = 50;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fond de l'écran pour l'objet non sélectionné</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="UpKey"></span><code><b>UpKey</b> = #80;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+ASCII code</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="DownKey"></span><code><b>DownKey</b> = #72;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="EscKey"></span><code><b>EscKey</b> = #27;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="CRKey"></span><code><b>CRKey</b> = #13;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<hr><span class="appinfo"><em>Produit par <a  href="https://github.com/pasdoc/pasdoc/wiki">PasDoc 0.15.0</a>. </em>
+</span>
+</td></tr></table></body></html>

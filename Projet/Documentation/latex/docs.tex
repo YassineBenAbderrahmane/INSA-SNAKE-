@@ -1,0 +1,4266 @@
+% Produit par https://github.com/pasdoc/pasdoc/wikiPasDoc 0.15.0
+\documentclass{report}
+\usepackage{hyperref}
+% WARNING: THIS SHOULD BE MODIFIED DEPENDING ON THE LETTER/A4 SIZE
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\marginparsep 0cm
+\marginparwidth 0cm
+\parindent 0cm
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2in}
+
+
+% Conditional define to determine if pdf output is used
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\pdffalse
+\else
+\pdfoutput=1
+\pdftrue
+\fi
+
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+
+% Write Document information for pdflatex/pdftex
+\ifpdf
+\pdfinfo{
+ /Author     (Pasdoc)
+ /Title      ()
+}
+\fi
+
+
+\begin{document}
+\label{toc}\tableofcontents
+\newpage
+% special variable used for calculating some widths.
+\newlength{\tmplength}
+\chapter{Unité Affichage}
+\label{Affichage}
+\index{Affichage}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{objet2Caractere}]
+\item[\texttt{affichaage}]
+\item[\texttt{afficherSerpent}]
+\item[\texttt{afficherLegende}]
+\item[\texttt{afficherPlateau}]
+\item[\texttt{afficherScore}]
+\item[\texttt{AfficherMenuuuuu}]
+\item[\texttt{afficherReglesDuJeu}]
+\item[\texttt{AfficherMeilleursScores}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{objet2Caractere}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{objet2Caractere}
+\fi
+\label{Affichage-objet2Caractere}
+\index{objet2Caractere}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function objet2Caractere(objet : Contenus; clignotement: Boolean) : Char;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction permettant de sortir le carctère ainsi que la "mise en page" (couleur + clignotement) correspondant à l'objet passé en entrée pour pouvoir afficher les éléments   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] contenu de la case que l'on souhaite afficher
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\end{description}
+\item[\textbf{Retourne}]la caractère correspond à l'objet passé en entrée avec la mise en page correspondante
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{affichaage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{affichaage}
+\fi
+\label{Affichage-affichaage}
+\index{affichaage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure affichaage(plateauJeu : Plateau; score : Score; serp : Serpent; xtaille,ytaille : Integer;clignotement : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant l'affichage complet de tous les éléments nécessaires au jeu (la plateau et ses éléments, le score et le serpent)      \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[plateauJeu] le plateau
+\item[score] le score qui sera actualise à chaque fois que le joueur mange un fruit
+\item[serp] le serpent
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{afficherSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{afficherSerpent}
+\fi
+\label{Affichage-afficherSerpent}
+\index{afficherSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure afficherSerpent(serp : Serpent; clignotement : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant l'affichage du serpent "sur le plateau de jeu" (en effet on superpose l'affichage du plateau et celui du serpent au même endroit  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[serp] le serpent
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{afficherLegende}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{afficherLegende}
+\fi
+\label{Affichage-afficherLegende}
+\index{afficherLegende}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure afficherLegende();\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant l'affichage de la légende avec les fruits
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{afficherPlateau}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{afficherPlateau}
+\fi
+\label{Affichage-afficherPlateau}
+\index{afficherPlateau}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure afficherPlateau(plateauJeu : Plateau; xtaille,ytaille : Integer; clignotement : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Procédure permettant d'afficher le plateau de jeu    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[plateauJeu] le plateau
+\item[xtaille] la taille du plateau sur l'axe horizontal (nombre de colonnes du tableau représentant le plateau)
+\item[ytaille] la taille du plateau sur l'axe vertical (nombre de lignes du tableau représentant le plateau)
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{afficherScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{afficherScore}
+\fi
+\label{Affichage-afficherScore}
+\index{afficherScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure afficherScore(score : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'afficher le score \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[score] le score qui sera actualisé à chaque fois que le joueur mange un fruit
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{AfficherMenuuuuu}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{AfficherMenuuuuu}
+\fi
+\label{Affichage-AfficherMenuuuuu}
+\index{AfficherMenuuuuu}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure AfficherMenuuuuu();\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'afficher le menu principal
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{afficherReglesDuJeu}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{afficherReglesDuJeu}
+\fi
+\label{Affichage-afficherReglesDuJeu}
+\index{afficherReglesDuJeu}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure afficherReglesDuJeu(var reglesDuJeu : Text);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'afficher les règles du jeu \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[reglesDuJeu] le fichier contenant les règles du jeu
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{AfficherMeilleursScores}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{AfficherMeilleursScores}
+\fi
+\label{Affichage-AfficherMeilleursScores}
+\index{AfficherMeilleursScores}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Procedure AfficherMeilleursScores (var fichierMeilleursScores: Text);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'afficher les meilleurs scores \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[fichierMeilleursScores] le fichier contenant l'historique des meilleurs scores triés par ordre décroissant
+\end{description}
+
+
+\end{list}
+\chapter{Unité Deplacement}
+\label{Deplacement}
+\index{Deplacement}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{sensInterdit}]
+\item[\texttt{avancerCorps}]
+\item[\texttt{avancerSerpent}]
+\item[\texttt{quelObjet}]
+\item[\texttt{collisionSerpent}]
+\item[\texttt{deplacementSerpent}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{sensInterdit}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{sensInterdit}
+\fi
+\label{Deplacement-sensInterdit}
+\index{sensInterdit}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function sensInterdit(dir : Direction) : Direction;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction déterminant la direction pour laquelle le serpent de se retourne sur lui{-}même  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[dir] est la direction actuelle du serpent
+\end{description}
+\item[\textbf{Retourne}]Direction donne la direction 
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{avancerCorps}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{avancerCorps}
+\fi
+\label{Deplacement-avancerCorps}
+\index{avancerCorps}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Procedure avancerCorps(coordtete : Position; var serp:Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet de faire avancer le corps de manière à ce qu'il suive la tête  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[coordtete] les coordoonées de la tête du serpent au moment où on va effectuer le deplacement du corps
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{avancerSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{avancerSerpent}
+\fi
+\label{Deplacement-avancerSerpent}
+\index{avancerSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure avancerSerpent(xtunnel1,ytunnel1,xtunnel2,ytunnel2 : Integer;objet : Contenus;dir : Direction; var serp : Serpent;var coordtete : Position);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant de faire avancer le serpent selon la direction entrée et les coordonnées du serpent        \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtunnel1] la coordonnée x de la première partie du tunnel
+\item[ytunnel1] la coordonnée y de la première partie du tunnel
+\item[xtunnel2] la coordonnée x de la deuxième partie du tunnel
+\item[ytunnel2] la coordonnée y de la deuxième partie du tunnel
+\item[objet] correspond à l'objet rencontrer par la tête du serpent au déplacement précédent
+\item[dir] est la direction entrée par l'utilisateur
+\item[serp] stocke les positions du corps du serpent
+\item[coordtete] les coordonnées de la tête du serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{quelObjet}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{quelObjet}
+\fi
+\label{Deplacement-quelObjet}
+\index{quelObjet}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function quelObjet (x , y : integer; tab:plateau):Contenus;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui prend des coordonnées en entré et indique quel objet se trouve sur le plateau à ces coordonnées    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[x] coordonnée sur l'axe des X
+\item[y] coordonnée sur l'axe des Y
+\item[tab] correspond au plateau
+\end{description}
+\item[\textbf{Retourne}]Contenus informe de la nature de l'objet
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{collisionSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{collisionSerpent}
+\fi
+\label{Deplacement-collisionSerpent}
+\index{collisionSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function collisionSerpent(serp : Serpent) : Boolean;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui contrôle si le serpent entre en collision avec l'une des parties de son corps  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[serp] Serpent
+\end{description}
+\item[\textbf{Retourne}]le booléen permettant de savoir si il y a eu une collision ou pas
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{deplacementSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{deplacementSerpent}
+\fi
+\label{Deplacement-deplacementSerpent}
+\index{deplacementSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure deplacementSerpent(xtunnel1,ytunnel1,xtunnel2,ytunnel2 : Integer; dir : Direction; tab:plateau; var serp : Serpent; var objet : Contenus; var mortSerp: Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure permettant de déplacer le serpent, en prenant en compte la direction entrée par l'utilisateur, la vitesse de déplacement(difficulté), les coordonnées du serpent et s'il rencontre un objet de type contenu ou pas         \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtunnel1] la coordonnée x de la première partie du tunnel
+\item[ytunnel1] la coordonnée y de la première partie du tunnel
+\item[xtunnel2] la coordonnée x de la deuxième partie du tunnel
+\item[ytunnel2] la coordonnée y de la deuxième partie du tunnel
+\item[dir] est la direction entrée par l'utilisateur
+\item[tab] correspond au plateau de jeu
+\item[serp] stocke les positions du corps du serpent
+\item[objet] correspond à l'objet rencontré par la tête du serpent lors de son déplacement
+\item[mortSerp] le booléen permettant de savoir si il y a eu une collision entre la tête du serpent et une partie de son corps
+\end{description}
+
+
+\end{list}
+\chapter{Unité Generation}
+\label{Generation}
+\index{Generation}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{randomFruit}]
+\item[\texttt{RechercherObjet}]
+\item[\texttt{DansPlateau}]
+\item[\texttt{randomDistance}]
+\item[\texttt{NoSerpent}]
+\item[\texttt{NoTeteSerpent}]
+\item[\texttt{genererFruit}]
+\item[\texttt{genererObstacle}]
+\item[\texttt{genererTunnel}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{randomFruit}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{randomFruit}
+\fi
+\label{Generation-randomFruit}
+\index{randomFruit}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function randomFruit ():Contenus;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui génère un fruit parmis la pomme l'orange et le citron, chaque fruit possède une certaine probabilité d'apparition \par
+\item[\textbf{Retourne}]Contenus informe de la nature de l'objet
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{RechercherObjet}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{RechercherObjet}
+\fi
+\label{Generation-RechercherObjet}
+\index{RechercherObjet}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure RechercherObjet (var tab : plateau; xtaille, ytaille: integer ;objet : Contenus;var Xobjet, Yobjet: integer; var ObjetPresent:boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de rechercher un objet sur le plateau, savoir s'il est présent sur le plateau, et s'il est présent, connaître ses coordonnées.       \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[tab] correspond au plateau
+\item[xtaille] taille en x du plateau
+\item[ytaille] taille en y du plateau
+\item[objet] correspond à l'objet dont on veut connaître la présence et les coordonnées sur le plateau
+\item[Xobjet] coordonnée x de l'objet recherché
+\item[Yobjet] coordonnée y de l'objet recherché
+\item[ObjetPresent] variable booléenne qui stocke si l'objet recherché est présent ou pas sur le plateau de jeu
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{DansPlateau}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{DansPlateau}
+\fi
+\label{Generation-DansPlateau}
+\index{DansPlateau}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function DansPlateau (x,y, xtaille ,ytaille :integer):boolean;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui contrôle si les coordonnées font partis du plateau     \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[x] coordonnée
+\item[y] coordonnée
+\item[xtaille] taille en x du plateau
+\item[ytaille] taille en y du plateau
+\end{description}
+\item[\textbf{Retourne}]le booléen permettant de savoir si les coordonnées sont dans le plateau
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{randomDistance}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{randomDistance}
+\fi
+\label{Generation-randomDistance}
+\index{randomDistance}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function randomDistance ():integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui génère un naturel entre {-}2 et +2 \par
+\item[\textbf{Retourne}]le naturel qui servira de distance
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{NoSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{NoSerpent}
+\fi
+\label{Generation-NoSerpent}
+\index{NoSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function NoSerpent (x, y :integer; serp: Serpent):boolean;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui vérifie que le serpent n'occupe pas les coordonnées fournis en entrée    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[x] coordonnée
+\item[y] coordonnée
+\item[serp] le serpent
+\end{description}
+\item[\textbf{Retourne}]le booléen permettant de savoir si le serpent est sur ces coordonnées ou non
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{NoTeteSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{NoTeteSerpent}
+\fi
+\label{Generation-NoTeteSerpent}
+\index{NoTeteSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function NoTeteSerpent (x,y :integer; serp:Serpent): boolean;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui vérifie que la tete du serpent n'est pas proche des coordonnées fournis en entrée    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[x] coordonnée
+\item[y] coordonnée
+\item[serp] le serpent
+\end{description}
+\item[\textbf{Retourne}]le booléen permettant de savoir si le serpent est sur ces coordonnées ou non
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{genererFruit}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{genererFruit}
+\fi
+\label{Generation-genererFruit}
+\index{genererFruit}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure genererFruit (var tab:Plateau; xtaille,ytaille: integer; serp:Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui génère un fruit et le place sur le plateau en vérifiant que l'espace est bien vide    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[tab] correspond au plateau
+\item[xtaille] taille en x du plateau
+\item[ytaille] taille en y du plateau
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{genererObstacle}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{genererObstacle}
+\fi
+\label{Generation-genererObstacle}
+\index{genererObstacle}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure genererObstacle ( xtaille, ytaille : integer; serp:Serpent ;var tab : Plateau);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui génère un obstacle et le place sur le plateau en vérifiant que l'espace est bien vide    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] taille en x du plateau
+\item[ytaille] taille en y du plateau
+\item[serp] le serpent
+\item[tab] correspond au plateau
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{genererTunnel}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{genererTunnel}
+\fi
+\label{Generation-genererTunnel}
+\index{genererTunnel}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure genererTunnel ( xtaille, ytaille : integer; serp:Serpent; var tab : Plateau; var xtunnel1, ytunnel1, xtunnel2,ytunnel2:integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui génère les deux portes du tunnel et les place sur une partie distincte du plateau en vérifiant que l'espace est bien vide        \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] taille en x du plateau
+\item[ytaille] taille en y du plateau
+\item[serp] le serpent
+\item[tab] correspond au plateau
+\item[xtunnel1] coordonnée en x de la porte 1
+\item[ytunnel1] coordonnée en y de la porte 1
+\item[xtunnel2] coordonnée en x de la porte 2
+\item[ytunnel2] coordonnée en y de la porte 2
+\end{description}
+
+
+\end{list}
+\chapter{Unité GestionScore}
+\label{GestionScore}
+\index{GestionScore}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{ChargerScores}]
+\item[\texttt{actualiserMeilleursScores}]
+\item[\texttt{EcrireFichierTexte}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{ChargerScores}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{ChargerScores}
+\fi
+\label{GestionScore-ChargerScores}
+\index{ChargerScores}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure ChargerScores(vitesseEvo:Boolean;vitesse : Integer; var TabScore : TableauDeScore);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Procedure permettant de charger les scores en provenance du fichier texte Score.txt dans un tableau   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesseEvo] booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non
+\item[vitesse] : vitesse dont le joueur veut voir les scores
+\item[TabScore] : le tableau ou sont charges les scores
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{actualiserMeilleursScores}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{actualiserMeilleursScores}
+\fi
+\label{GestionScore-actualiserMeilleursScores}
+\index{actualiserMeilleursScores}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure actualiserMeilleursScores( vitesseEvo:Boolean;vitesse : Integer; Nbpoint : Integer; nomJoueur : String; var TabScore : TableauDeScore);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Procedure permettant d'actualiser le tableau de score (trié)    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesseEvo] booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non
+\item[Nbpoint] : le nombre de point obtenu par le jouer lors de la partie
+\item[nomJoueur] : le nom du joueur venant de faire une partie
+\item[TabScore] : le tableau ou sont charges les scores
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{EcrireFichierTexte}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{EcrireFichierTexte}
+\fi
+\label{GestionScore-EcrireFichierTexte}
+\index{EcrireFichierTexte}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure EcrireFichierTexte (vitesseEvo:Boolean; vitesse : Integer; TabScore : TableauDeScore ; var fichierMeilleursScores : Text);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Procedure qui permet d'écrire les nouveaux scores dans le fichier texte correspondant    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesseEvo] booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non
+\item[vitesse] : vitesse de la partie préalablement jouée
+\item[TabScore] : le tableau de score à retranscrir dans le fichier texte
+\item[fichierMeilleursScores] : le fichier texte dans lequel nous écrivons les nouveaux scores
+\end{description}
+
+
+\end{list}
+\chapter{Unité Initialisation}
+\label{Initialisation}
+\index{Initialisation}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{initScore}]
+\item[\texttt{initSerpent}]
+\item[\texttt{initTaillePlateau}]
+\item[\texttt{initDifficulteVitesse}]
+\item[\texttt{initPlateau}]
+\item[\texttt{initPartie}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{initScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initScore}
+\fi
+\label{Initialisation-initScore}
+\index{initScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initScore(var scoore : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'initialiser le score de la partie à 0 et de donner un Nom au joueur \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[score] le score qui sera actualisé à chaque fois que le joueur mange un fruit
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{initSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initSerpent}
+\fi
+\label{Initialisation-initSerpent}
+\index{initSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initSerpent(xtaille, ytaille : Integer;var serp:Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'initialiser le serpent en intialisant la taille de son corps à 1 et en positionnant le premier morceau du corps au centre du plateau de jeu.   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{initTaillePlateau}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initTaillePlateau}
+\fi
+\label{Initialisation-initTaillePlateau}
+\index{initTaillePlateau}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initTaillePlateau(var xtaille, ytaille : Integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'initialiser la taille du plateau de jeu en demandant à l'utilisateur de choisir entre 3 niveaux.  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{initDifficulteVitesse}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initDifficulteVitesse}
+\fi
+\label{Initialisation-initDifficulteVitesse}
+\index{initDifficulteVitesse}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initDifficulteVitesse (var vitesse : Integer; var vitesseEvo: Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'initialiser la vitesse de déplacement du serpent.  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesse] la vitesse de déplacement du serpent sur le plateau de jeu qui correspond en fait au nombre de millisecondes entre chaque affichage des éléments
+\item[vitesseEvo] booléen qui permet de savoir si le mode progressif a été selectionné par le joueur ou non
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{initPlateau}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initPlateau}
+\fi
+\label{Initialisation-initPlateau}
+\index{initPlateau}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initPlateau(xtaille,ytaille : Integer; var plateauJeu : Plateau);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'initialiser la plateau de jeu en intialisant toutes les cases à vide.   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[plateauJeu] le plateau
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{initPartie}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initPartie}
+\fi
+\label{Initialisation-initPartie}
+\index{initPartie}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initPartie(var vitesse : Integer;var vitesseEvo:Boolean; var scoore : Score; var serp: Serpent; var xtaille,ytaille: Integer; var findepartie : Boolean; var plateauJeu : Plateau;var clignotement : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'initialiser la partie en réalisant successivement les différentes initialisations nécessaires au lancement d'une partie        \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesse] la vitesse de déplacement du serpent sur le plateau de jeu
+\item[score] le score qui sera actualisé à chaque fois que le joueur mange un fruit
+\item[serp] le serpent
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[findepartie] variable booléenne qui permet de savoir si la partie est terminée ou pas
+\item[plateauJeu] le plateau de jeu
+\item[clignotement] variable booléenne qui permet de savoir si on doit faire clignoter les éléments à l'affichage
+\end{description}
+
+
+\end{list}
+\chapter{Unité Jouer}
+\label{Jouer}
+\index{Jouer}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{augmenterScore}]
+\item[\texttt{transformerToucheEnDirection}]
+\item[\texttt{estMort}]
+\item[\texttt{grandirSerpent}]
+\item[\texttt{directionOpposee}]
+\item[\texttt{Renaissance}]
+\item[\texttt{doitClignoter}]
+\item[\texttt{vitesseWeedPiment}]
+\item[\texttt{vitesseEvolutive}]
+\item[\texttt{videPlateau}]
+\item[\texttt{jakadi}]
+\item[\texttt{detectionFruit}]
+\item[\texttt{SelectionChar}]
+\item[\texttt{selectionTouche}]
+\item[\texttt{niveauStage}]
+\item[\texttt{jouerPartie}]
+\item[\texttt{snake}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{augmenterScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{augmenterScore}
+\fi
+\label{Jouer-augmenterScore}
+\index{augmenterScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure augmenterScore(objet : Contenus; var score : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'augmenter le score d'un certain nombre de points en fonction du fruit mangé  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] donne le type de fruit mangé par le serpent
+\item[score] le score qui sera actualise à chaque fois que le joueur mange un fruit
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{transformerToucheEnDirection}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{transformerToucheEnDirection}
+\fi
+\label{Jouer-transformerToucheEnDirection}
+\index{transformerToucheEnDirection}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function transformerToucheEnDirection(toucheDirection : Char) : Direction;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Fonction permettant de recevoir une touche entrée par l'utilisateur et la transformer en une direction  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[toucheDirection] est une touche du clavier, qui devra être une flèche directionnelle
+\end{description}
+\item[\textbf{Retourne}]dir Une direction du serpent, qui pourra être utilisée pour déplacer le serpent
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{estMort}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{estMort}
+\fi
+\label{Jouer-estMort}
+\index{estMort}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure estMort(mortSerp : Boolean; objet :Contenus; var finpartie : boolean;score : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant d'arrêter la partie lorsque le serpent touche un mur/obstacle ou se mord la queue    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[mortSerp] booléen permettant de savoir si le serpent s'est mordu la queue ou non
+\item[objet] le contenu de la case où se trouve la tête du serpent
+\item[finpartie] booléen qui indique si la partie est finie ou non
+\item[score] le score qui est affiché lorsque la partie est finie
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{grandirSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{grandirSerpent}
+\fi
+\label{Jouer-grandirSerpent}
+\index{grandirSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure grandirSerpent(dir : Direction; objet : Contenus; var serp : Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant de faire grandir le serpent d'une case après l'ingestion d'un fruit   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[dir] la direction dans laquelle on doit ajouter le nouveau morceau de serpent
+\item[objet] le contenu de la case où se trouve la tête du serpent
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{directionOpposee}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{directionOpposee}
+\fi
+\label{Jouer-directionOpposee}
+\index{directionOpposee}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure directionOpposee(objet : Contenus;var toucheDirection : char);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant de donner la touche opposée à la touche prise en entrée si l'objet pris en entrée est une coco  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] l'objet que l'on regarde pour savoir si c'est une coco
+\item[toucheDirection] la touche direction que l'on va modifier si le fruit est une coco
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{Renaissance}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Renaissance}
+\fi
+\label{Jouer-Renaissance}
+\index{Renaissance}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Procedure Renaissance(objet:Contenus ;var serp:Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet de diminuer la taille du serpent de moitité si le fruit pris en entrée est une myrtille  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] l'objet que l'on regarde pour savoir si c'est une myrtille
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{doitClignoter}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{doitClignoter}
+\fi
+\label{Jouer-doitClignoter}
+\index{doitClignoter}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function doitClignoter(objet : Contenus):Boolean;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Fonction dont le rôle est de renvoyer un booléen indiquant si un citron a été mangé et donc de faire clignoter le jeu  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] le type de fruit mangé par le serpent
+\end{description}
+\item[\textbf{Retourne}]Un booléen qui indique si le jeu doit clignoter ou non 
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{vitesseWeedPiment}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{vitesseWeedPiment}
+\fi
+\label{Jouer-vitesseWeedPiment}
+\index{vitesseWeedPiment}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure vitesseWeedPiment(vitesseEvo : Boolean; vitesseInitiale : Integer; objet: Contenus; var vitesse: Integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet de gérer les variations de vitesse avec les fruits weed et piment    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesseEvo] booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non
+\item[vitesseInitiale] la vitesse initiale telle qu'elle a été choisie par l'utilisateur lors de l'initialisation
+\item[objet] l'objet que le serpent recontre lors de son déplacement
+\item[vitesse] la variable qui contient la valeur de la vitesse modifiée par les fruits
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{vitesseEvolutive}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{vitesseEvolutive}
+\fi
+\label{Jouer-vitesseEvolutive}
+\index{vitesseEvolutive}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure vitesseEvolutive(objet : Contenus; vitesseEvo: Boolean;score: Score; var vitesse:Integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'activer la vitesse progressive du serpent en fonction du nombre de points du joueur     *\par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] l'objet que le serpent recontre lors de son déplacement
+\item[vitesseEvo] booléen qui permet de savoir si le mode vitesse progressive a été selectionné par le joueur ou non
+\item[score] le nombre de points permet à la procédure d'augmenter la vitesse ou non
+\item[vitesse] la variable qui contient la valeur de la vitesse modifiée par les fruits
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{videPlateau}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{videPlateau}
+\fi
+\label{Jouer-videPlateau}
+\index{videPlateau}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure videPlateau(objet : Contenus; xtaille,ytaille : Integer; var plateauJeu : Plateau; var estVide : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet de vider le plateau lorsque le serpent mange un fruit      *\par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] l'objet rencontré par le serpent lors de son déplacement (on regarde si c'est un fruit ou pas)
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[plateauJeu] le plateau de jeu
+\item[estVide] variable booléenne qui permet de savoir si la plateau a été vidé ou pas
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{jakadi}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{jakadi}
+\fi
+\label{Jouer-jakadi}
+\index{jakadi}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure jakadi(xtaille,ytaille : Integer; dir : Direction; mortSerp : Boolean; objet :Contenus; var serp : Serpent; var score : Score; var finpartie : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Procédure qui permet de gérer certaines les effets sur le serpent (et la partie) en fonction de l'objet rencontré par le serpent        \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[dir] la direction dans laquelle le serpent se déplace au moment de l'appel
+\item[mortSerp] booléen permettant de savoir si le serpent s'est mordu la queue ou non
+\item[objet] le contenu de la case où se trouve la tête du serpent
+\item[serp] le serpent
+\item[score] le score
+\item[finpartie] booléen qui indique si la partie est finie ou non
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{detectionFruit}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{detectionFruit}
+\fi
+\label{Jouer-detectionFruit}
+\index{detectionFruit}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure detectionFruit(objet : Contenus; var fruit : Contenus);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de savoir si l'objet rencontré par la tête du serpent lors de son déplacement est un fruit ou pas et de retourner le fruit en question si c'est un fruit  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] l'objet rencontré par la tête du serpent
+\item[fruit] le fruit rencontré par le serpent (si l'objet rencontré est un fruit)
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{SelectionChar}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{SelectionChar}
+\fi
+\label{Jouer-SelectionChar}
+\index{SelectionChar}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Function SelectionChar(derniereTouche : char) : char;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet la sélection de la touche du clavier par l'utilisateur tout en vérifiant qu'elle est valide \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[derniereTouche] contient la dernière touche entrée par l'utilisateur pour l'affecter à la saisie en cours si la saisie est fausse et ainsi ne pas stopper le programme
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{selectionTouche}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{selectionTouche}
+\fi
+\label{Jouer-selectionTouche}
+\index{selectionTouche}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure selectionTouche(var toucheDirection : char; var dir : Direction; objet : Contenus);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet de gérer tout le mécanisme de saisie de la direction de sorte à ce que la direction envoyée en sortie soit valide   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[toucheDirection] la touche du clavier saisie par l'utilisateur
+\item[dir] permet d'avoir la dernière direction et de sortir la direction traitée
+\item[objet] l'objet rencontré par la tête du serpent pour savoir si c'est une coco et ainsi inverser les touches directionnelles
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{niveauStage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{niveauStage}
+\fi
+\label{Jouer-niveauStage}
+\index{niveauStage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure niveauStage(serp : Serpent;plateauJeu : Plateau;objet : Contenus; var scoore : Score; var xtaille,ytaille : Integer; var vitesse : Integer; var clignotement : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui gère le lancement du mécanisme de stage au sein de la partie        \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[serp] le serpent
+\item[plateauJeu] le plateau de jeu
+\item[objet] l'objet rencontré par la tête du serpent pour savoir si c'est un kiwi
+\item[scoore] le score de la partie en cours pour pouvoir directment l'incrémenter dans le mécanisme de stage si nécessaire
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[vitesse] la variable qui contient la valeur de la vitesse du serpent au moment de l'appel
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{jouerPartie}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{jouerPartie}
+\fi
+\label{Jouer-jouerPartie}
+\index{jouerPartie}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure jouerPartie(vitesseEvo:Boolean;clingotement : Boolean; plateauJeu : Plateau; findepartie : Boolean; vitesse : Integer; serp : Serpent;var xtaille, ytaille : Integer; var scoore : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure centrale qui gère le mécanisme de jeu         \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[vitesseEvo] booléen qui permet de savoir si le mode progressif a été selectionné par le joueur ou non
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\item[plateauJeu] le plateau de jeu
+\item[findepartie] booléen permettant de savoir quand la partie doit se terminer
+\item[vitesse] la vitesse de déplacement du serpent sur le plateau de jeu
+\item[serp] le serpent
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[score] le score qui sera actualisé à chaque fois que le joueur mange un fruit
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{snake}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{snake}
+\fi
+\label{Jouer-snake}
+\index{snake}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure snake(var fichierMeilleursScores : Text);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure permettant de lancer une partie \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[fichierMeilleursScores] le fichier contenant l'historique des meilleurs scores triés par ordre décroissant
+\end{description}
+
+
+\end{list}
+\chapter{Unité LesMenus}
+\label{LesMenus}
+\index{LesMenus}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{\begin{ttfamily}TMainMenu\end{ttfamily} Objet}]
+\end{description}
+\begin{description}
+\item[\texttt{Selection}]
+\item[\texttt{AfficheSousMenu}]
+\item[\texttt{Navigation}]
+\item[\texttt{MenuVitesse}]
+\item[\texttt{MenuTaille}]
+\end{description}
+\section{Classes, interfaces, enregistrements et objets}
+\ifpdf
+\subsection*{\large{\textbf{TMainMenu Objet}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{TMainMenu Objet}
+\fi
+\label{LesMenus.TMainMenu}
+\index{TMainMenu}
+\subsubsection*{\large{\textbf{Hiérarchie}}\normalsize\hspace{1ex}\hfill}
+TMainMenu {$>$} TObject
+%%%%Description
+\subsubsection*{\large{\textbf{Méthodes}}\normalsize\hspace{1ex}\hfill}
+\paragraph*{Create}\hspace*{\fill}
+
+\label{LesMenus.TMainMenu-Create}
+\index{Create}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+public constructor Create();\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Tableau contenant les differents Propositions de Menu
+
+\end{list}
+\paragraph*{AfficherMenu}\hspace*{\fill}
+
+\label{LesMenus.TMainMenu-AfficherMenu}
+\index{AfficherMenu}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+public procedure AfficherMenu();\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+constructor: mot réservé appartenant à la programmation orientée objet. Le constructeur est une méthode de création de classe qui crée ici notre menu.
+
+\end{list}
+\paragraph*{CurHaut}\hspace*{\fill}
+
+\label{LesMenus.TMainMenu-CurHaut}
+\index{CurHaut}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+public procedure CurHaut();\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+var de type procédure
+
+\end{list}
+\paragraph*{CurBas}\hspace*{\fill}
+
+\label{LesMenus.TMainMenu-CurBas}
+\index{CurBas}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+public procedure CurBas();\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Curseur Haut
+
+\end{list}
+\paragraph*{GetSelectionner}\hspace*{\fill}
+
+\label{LesMenus.TMainMenu-GetSelectionner}
+\index{GetSelectionner}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+public function GetSelectionner(): integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Curseur Bas
+
+\end{list}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{Selection}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Selection}
+\fi
+\label{LesMenus-Selection}
+\index{Selection}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Function Selection() : Char;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction GetSelectionner qui Renvoit à la fin 'Selectionner'
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{AfficheSousMenu}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{AfficheSousMenu}
+\fi
+\label{LesMenus-AfficheSousMenu}
+\index{AfficheSousMenu}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Procedure AfficheSousMenu(Curseur : Integer; MenuItem: TableauMenu; TotalItems : Integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{Navigation}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Navigation}
+\fi
+\label{LesMenus-Navigation}
+\index{Navigation}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Function Navigation(Selection : Char; Cur : Integer; TotalItems : Integer) : Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{MenuVitesse}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{MenuVitesse}
+\fi
+\label{LesMenus-MenuVitesse}
+\index{MenuVitesse}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure MenuVitesse (var choixVitesse:integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet d'afficher le sous menu pour la sélection de la vitesse du serpent \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[choixVitesse] entier correspondant au numéro du choix de l'utilisateur
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{MenuTaille}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{MenuTaille}
+\fi
+\label{LesMenus-MenuTaille}
+\index{MenuTaille}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure MenuTaille (var choixTaille : integer);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet d'afficher le sous menu pour la sélection de la taille du plateau \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[choixTaille] entier correspondant au numéro du choix de l'utilisateur
+\end{description}
+
+
+\end{list}
+\section{Constantes}
+\ifpdf
+\subsection*{\large{\textbf{MenuXofs}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{MenuXofs}
+\fi
+\label{LesMenus-MenuXofs}
+\index{MenuXofs}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+MenuXofs = 10;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Place la barre de menu selon l'axe X et Y
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{MenuYofs}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{MenuYofs}
+\fi
+\label{LesMenus-MenuYofs}
+\index{MenuYofs}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+MenuYofs = 2;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{SelectedFC}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{SelectedFC}
+\fi
+\label{LesMenus-SelectedFC}
+\index{SelectedFC}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+SelectedFC = White;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+Couleur de premier et dernier plan
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{SelectedBC}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{SelectedBC}
+\fi
+\label{LesMenus-SelectedBC}
+\index{SelectedBC}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+SelectedBC = LightCyan;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+couleur de texte pour objet sélectionné
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{NormalFC}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{NormalFC}
+\fi
+\label{LesMenus-NormalFC}
+\index{NormalFC}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+NormalFC = LightGray;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+couleur de fond pour objet sélectionné
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{NormalBC}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{NormalBC}
+\fi
+\label{LesMenus-NormalBC}
+\index{NormalBC}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+NormalBC = Black;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+couleur de premier plan pour objet non sélectionné
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{SelectorLargeur}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{SelectorLargeur}
+\fi
+\label{LesMenus-SelectorLargeur}
+\index{SelectorLargeur}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+SelectorLargeur = 50;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fond de l'écran pour l'objet non sélectionné
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{UpKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{UpKey}
+\fi
+\label{LesMenus-UpKey}
+\index{UpKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+UpKey = {\#}80;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+ASCII code
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{DownKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{DownKey}
+\fi
+\label{LesMenus-DownKey}
+\index{DownKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+DownKey = {\#}72;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{EscKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{EscKey}
+\fi
+\label{LesMenus-EscKey}
+\index{EscKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+EscKey = {\#}27;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{CRKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{CRKey}
+\fi
+\label{LesMenus-CRKey}
+\index{CRKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+CRKey = {\#}13;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\chapter{Logiciel programmePrincipal}
+\label{programmePrincipal}
+\index{programmePrincipal}
+\chapter{Unité Stage}
+\label{Stage}
+\index{Stage}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{Char2Contenus}]
+\item[\texttt{RemplirPlateauSTAGE}]
+\item[\texttt{initStage}]
+\item[\texttt{estMortStage}]
+\item[\texttt{jouerPartieStage}]
+\item[\texttt{traitementObjetFinal}]
+\item[\texttt{choixFichierStage}]
+\item[\texttt{jouerStage}]
+\end{description}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{Char2Contenus}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Char2Contenus}
+\fi
+\label{Stage-Char2Contenus}
+\index{Char2Contenus}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function Char2Contenus( lue : char ) : contenus;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet transformer un carcatère en un contenu  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[lue] le caracète lu
+\end{description}
+\item[\textbf{Retourne}]le contenu correspondant au caractère lu
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{RemplirPlateauSTAGE}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{RemplirPlateauSTAGE}
+\fi
+\label{Stage-RemplirPlateauSTAGE}
+\index{RemplirPlateauSTAGE}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Procedure RemplirPlateauSTAGE(var plateauJeuStage:Plateau; var fichierSTAGE: Text; nomFichier : String);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui va permettre de remplir un plateau de jeu de stage à partir d'un fichier texte contenant la carte du stage sous forme de caractères   (nomFichier le nom du fichier que l'on souhaite lire\par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[plateauJeuStage] la plteau de jeu du stage que l'on veut remplir
+\item[fichierSTAGE] la variable qui va contenir le fichier que l'on souhaite lire
+\item[] 
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{initStage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{initStage}
+\fi
+\label{Stage-initStage}
+\index{initStage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure initStage(var xtaille,ytaille : Integer; var vitesse : Integer; var clignotement,findepartieStage : Boolean; var serpNiveauParallele : Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet d'intialiser le stage       \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[vitesse] la vitesse de déplacement du serpent sur le plateau de jeu
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\item[findepartieStage] booléen permettant de savoir quand le stage doit se terminer
+\item[scoore] le score
+\item[serpNiveauParallele] le serpent qui va être utilisé pour jouer le stage
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{estMortStage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{estMortStage}
+\fi
+\label{Stage-estMortStage}
+\index{estMortStage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure estMortStage(objet :Contenus; var finpartieStage : Boolean);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui va permettre de gérer la fin du stage en cas de collision avec un mur ou un obstacle  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objet] l'objet rencontré par la tête du serpent
+\item[finpartieStage] booléen permettant de savoir quand le stage doit se terminer
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{jouerPartieStage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{jouerPartieStage}
+\fi
+\label{Stage-jouerPartieStage}
+\index{jouerPartieStage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure jouerPartieStage(clingotement : Boolean; plateauJeuStage : Plateau; findepartieStage : Boolean; vitesse : Integer; serpNiveauParallele : Serpent; xtaille, ytaille : Integer; var scoore : Score; var objetFinal : Contenus);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui gère le déroulement du stage        \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\item[plateauJeuStage] le plateau de jeu utilisé pour le stage
+\item[finpartieStage] booléen permettant de savoir quand le stage doit se terminer
+\item[vitesse] la vitesse de déplacement du serpent sur le plateau de jeu
+\item[serpNiveauParallele] le serpent qui va être utilisé pour jouer le stage
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[objetFinal] le dernier objet rencontré par la tête du serpent afin de regarder si c'est un kiwi en or
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{traitementObjetFinal}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{traitementObjetFinal}
+\fi
+\label{Stage-traitementObjetFinal}
+\index{traitementObjetFinal}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure traitementObjetFinal(var objetFinal : Contenus; var scoore : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui permet de gérer la fin de partie dans le cas où le serpent parvient à atteindre le kiwi en or  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[objetFinal] le dernier objet rencontré par la tête du serpent afin de regarder si c'est un kiwi en or
+\item[scoore] le score
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{choixFichierStage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{choixFichierStage}
+\fi
+\label{Stage-choixFichierStage}
+\index{choixFichierStage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function choixFichierStage() : string;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet de tirer aléatoirement un nom de fichier parmi les 7 disponibles @retunrs(nomFichier le nom du fichier choisi aléatoirement)
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{jouerStage}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{jouerStage}
+\fi
+\label{Stage-jouerStage}
+\index{jouerStage}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure jouerStage(xtaille,ytaille : Integer; vitesse : Integer; clignotement,findepartieStage : Boolean; var scoore : Score; serpNiveauParallele : Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procedure qui gère le mécanisme de jeu du stage       \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[xtaille] la taille du plateau sur l'axe horizontal
+\item[ytaille] la taille du plateau sur l'axe vertical
+\item[vitesse] la vitesse de déplacement du serpent sur le plateau de jeu
+\item[clignotement] la variable booléenne pour savoir si le plateau doit clignoter lors de l'affichage
+\item[findepartieStage] booléen permettant de savoir quand le stage doit se terminer
+\item[scoore] le score
+\item[serpNiveauParallele] le serpent qui va être utilisé pour jouer le stage
+\end{description}
+
+
+\end{list}
+\chapter{Unité Types}
+\label{Types}
+\index{Types}
+\section{Aperçu}
+\begin{description}
+\item[\texttt{\begin{ttfamily}Position\end{ttfamily} Enregistrement}]
+\item[\texttt{\begin{ttfamily}Serpent\end{ttfamily} Enregistrement}]
+\item[\texttt{\begin{ttfamily}Score\end{ttfamily} Enregistrement}]
+\end{description}
+\begin{description}
+\item[\texttt{obtenirCoordonneeX}]
+\item[\texttt{obtenirCoordonneeY}]
+\item[\texttt{fixerCoordonneeX}]
+\item[\texttt{fixerCoordonneeY}]
+\item[\texttt{obtenirTailleSerpent}]
+\item[\texttt{obtenirCoordonneesCorpsSerpent}]
+\item[\texttt{fixerTailleSerpent}]
+\item[\texttt{fixerCoordonneesCorpsSerpent}]
+\item[\texttt{fixerPointScore}]
+\item[\texttt{fixerNomScore}]
+\item[\texttt{obtenirPointScore}]
+\item[\texttt{obtenirNomScore}]
+\end{description}
+\section{Classes, interfaces, enregistrements et objets}
+\ifpdf
+\subsection*{\large{\textbf{Position Enregistrement}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Position Enregistrement}
+\fi
+\label{Types.Position}
+\index{Position}
+%%%%Description
+\subsubsection*{\large{\textbf{Champs}}\normalsize\hspace{1ex}\hfill}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{x}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\label{Types.Position-x}
+\index{x}
+\item[\textbf{x}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+x: Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+
+\par  \label{Types.Position-y}
+\index{y}
+\item[\textbf{y}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+y: Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+
+\par  \end{list}
+\ifpdf
+\subsection*{\large{\textbf{Serpent Enregistrement}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Serpent Enregistrement}
+\fi
+\label{Types.Serpent}
+\index{Serpent}
+%%%%Description
+\subsubsection*{\large{\textbf{Champs}}\normalsize\hspace{1ex}\hfill}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{tailleSerpent}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\label{Types.Serpent-corps}
+\index{corps}
+\item[\textbf{corps}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+corps: Array [1..MAXTAILLE] of Position;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+
+\par  \label{Types.Serpent-tailleSerpent}
+\index{tailleSerpent}
+\item[\textbf{tailleSerpent}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+tailleSerpent: Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+
+\par  \end{list}
+\ifpdf
+\subsection*{\large{\textbf{Score Enregistrement}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Score Enregistrement}
+\fi
+\label{Types.Score}
+\index{Score}
+%%%%Description
+\subsubsection*{\large{\textbf{Champs}}\normalsize\hspace{1ex}\hfill}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Points}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\label{Types.Score-Points}
+\index{Points}
+\item[\textbf{Points}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Points: QWord;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+
+\par  \label{Types.Score-Nom}
+\index{Nom}
+\item[\textbf{Nom}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Nom: string;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+
+\par  \end{list}
+\section{Fonctions et procédures}
+\ifpdf
+\subsection*{\large{\textbf{obtenirCoordonneeX}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{obtenirCoordonneeX}
+\fi
+\label{Types-obtenirCoordonneeX}
+\index{obtenirCoordonneeX}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function obtenirCoordonneeX(coordonnees : Position): Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet d'accéder à la coordonnée x d'une variable de type Position  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[coordonnees] variable de type Positon contenant une coordonnée x et une coordonnée y
+\end{description}
+\item[\textbf{Retourne}]l'entier correspondant à la coordonnée x de la variable de type Position
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{obtenirCoordonneeY}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{obtenirCoordonneeY}
+\fi
+\label{Types-obtenirCoordonneeY}
+\index{obtenirCoordonneeY}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function obtenirCoordonneeY(coordonnees : Position): Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet d'accéder à la coordonnée y d'une variable de type Position  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[coordonnees] variable de type Positon contenant une coordonnée x et une coordonnée y
+\end{description}
+\item[\textbf{Retourne}]l'entier correspondant à la coordonnée y de la variable de type Position
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{fixerCoordonneeX}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{fixerCoordonneeX}
+\fi
+\label{Types-fixerCoordonneeX}
+\index{fixerCoordonneeX}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure fixerCoordonneeX(x : Integer; var coordonnees : Position);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de fixer la coordonnée x d'une variable coordonnées de type Position  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[x] l'entier correspondant à ce que l'on veut fixer
+\item[coordonnees] variable de type Positon contenant une coordonnée x et une coordonnée y
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{fixerCoordonneeY}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{fixerCoordonneeY}
+\fi
+\label{Types-fixerCoordonneeY}
+\index{fixerCoordonneeY}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure fixerCoordonneeY(y : Integer;var coordonnees : Position);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de fixer la coordonnée y d'une variable coordonnées de type Position  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[y] l'entier correspondant à ce que l'on veut fixer
+\item[coordonnees] variable de type Positon contenant une coordonnée x et une coordonnée y
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{obtenirTailleSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{obtenirTailleSerpent}
+\fi
+\label{Types-obtenirTailleSerpent}
+\index{obtenirTailleSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function obtenirTailleSerpent(serp : Serpent): Integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet d'obtenir la taille du serpent passé en entrée  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[serp] le serpent
+\end{description}
+\item[\textbf{Retourne}]l'entier correspondant à la taille du serpent passé en entrée
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{obtenirCoordonneesCorpsSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{obtenirCoordonneesCorpsSerpent}
+\fi
+\label{Types-obtenirCoordonneesCorpsSerpent}
+\index{obtenirCoordonneesCorpsSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function obtenirCoordonneesCorpsSerpent(serp : Serpent; indice : Integer): Position;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet d'obtenir une variable de type Position contenant les coordonnées du morceau du serpent correspondant à l'indice demandé   \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[serp] le serpent
+\item[indice] le numéro du morceau du serpent correspondant à l'indice de la case du tableau contenant les coordonnées des morceaux du serpent
+\end{description}
+\item[\textbf{Retourne}]les coordonnées de type Position contenant une coordonnée x et une coordonnée y
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{fixerTailleSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{fixerTailleSerpent}
+\fi
+\label{Types-fixerTailleSerpent}
+\index{fixerTailleSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure fixerTailleSerpent(tailleserp : Integer; var serp : Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de fixer la taille du serpent  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[tailleserp] la taille que l'on souhaite donner au serpent
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{fixerCoordonneesCorpsSerpent}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{fixerCoordonneesCorpsSerpent}
+\fi
+\label{Types-fixerCoordonneesCorpsSerpent}
+\index{fixerCoordonneesCorpsSerpent}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure fixerCoordonneesCorpsSerpent(coordonneesCorpsX,coordonneesCorpsY : Integer; indice : Integer; var serp : Serpent);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de fixer les coordonées x et y d'un morceau du serpent    \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[coordonneesCorpsX] la coordonnée x que l'on souhaite donner au morceau
+\item[coordonneesCorpsY] la coordonnée y que l'on souhaite donner au morceau
+\item[indice] le numéro du morceau du serpent correspondant à l'indice de la case du tableau contenant les coordonnées des morceaux du serpent
+\item[serp] le serpent
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{fixerPointScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{fixerPointScore}
+\fi
+\label{Types-fixerPointScore}
+\index{fixerPointScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure fixerPointScore(point : Integer; var Ajout : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de fixer les points du score  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[point] le nombre de points que l'on souhaite donner au score
+\item[Ajout] la variable de type score sur laquelle on veut modifier le nombre de points
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{fixerNomScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{fixerNomScore}
+\fi
+\label{Types-fixerNomScore}
+\index{fixerNomScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+procedure fixerNomScore(name : String; var Ajout : Score);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+procédure qui permet de fixer le nom de joueur à une variable de type score  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[name] le nom que l'on souhaite donner
+\item[Ajout] la variable de type score sur laquelle on veut modifier le nom
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{obtenirPointScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{obtenirPointScore}
+\fi
+\label{Types-obtenirPointScore}
+\index{obtenirPointScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function obtenirPointScore(Ajout: Score): integer;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet d'obtenir le nombre de point d'une variable de type score  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[Ajout] la variable de type score dont on veut connaître le nombre de points associé
+\end{description}
+\item[\textbf{Retourne}]le nombre de points
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{obtenirNomScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{obtenirNomScore}
+\fi
+\label{Types-obtenirNomScore}
+\index{obtenirNomScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+function obtenirNomScore(Ajout:Score):String;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+fonction qui permet d'obtenir le nom associé à une variable de type score  \par
+\item[\textbf{Paramètres}]
+\begin{description}
+\item[Ajout] la variable de type score dont on veut connaître le nom associé à cette variable
+\end{description}
+\item[\textbf{Retourne}]le nom
+
+
+\end{list}
+\section{Types}
+\ifpdf
+\subsection*{\large{\textbf{Contenus}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Contenus}
+\fi
+\label{Types-Contenus}
+\index{Contenus}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Contenus = (...);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+ \item[\textbf{Valeurs}]
+\begin{description}
+\item[\texttt{pomme}] \label{Types-pomme}
+\index{}
+ 
+\item[\texttt{orange}] \label{Types-orange}
+\index{}
+ 
+\item[\texttt{citron}] \label{Types-citron}
+\index{}
+ 
+\item[\texttt{piment}] \label{Types-piment}
+\index{}
+ 
+\item[\texttt{weed}] \label{Types-weed}
+\index{}
+ 
+\item[\texttt{coco}] \label{Types-coco}
+\index{}
+ 
+\item[\texttt{myrtille}] \label{Types-myrtille}
+\index{}
+ 
+\item[\texttt{kiwi}] \label{Types-kiwi}
+\index{}
+ 
+\item[\texttt{goldkiwi}] \label{Types-goldkiwi}
+\index{}
+ 
+\item[\texttt{mur}] \label{Types-mur}
+\index{}
+ 
+\item[\texttt{vide}] \label{Types-vide}
+\index{}
+ 
+\item[\texttt{obstacle}] \label{Types-obstacle}
+\index{}
+ 
+\item[\texttt{tunnel1}] \label{Types-tunnel1}
+\index{}
+ 
+\item[\texttt{tunnel2}] \label{Types-tunnel2}
+\index{}
+ 
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{Plateau}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Plateau}
+\fi
+\label{Types-Plateau}
+\index{Plateau}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Plateau = Array [1..XMAX,1..YMAX] of Contenus;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{Direction}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{Direction}
+\fi
+\label{Types-Direction}
+\index{Direction}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+Direction = (...);\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\par
+\item[\textbf{Description}]
+ \item[\textbf{Valeurs}]
+\begin{description}
+\item[\texttt{up}] \label{Types-up}
+\index{}
+ 
+\item[\texttt{down}] \label{Types-down}
+\index{}
+ 
+\item[\texttt{right}] \label{Types-right}
+\index{}
+ 
+\item[\texttt{left}] \label{Types-left}
+\index{}
+ 
+\end{description}
+
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{TableauDeScore}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{TableauDeScore}
+\fi
+\label{Types-TableauDeScore}
+\index{TableauDeScore}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+TableauDeScore = array[1..10] of Score;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{TableauMenu}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{TableauMenu}
+\fi
+\label{Types-TableauMenu}
+\index{TableauMenu}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+TableauMenu = Array [1..MAXITEMS] of String;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\section{Constantes}
+\ifpdf
+\subsection*{\large{\textbf{XMAX}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{XMAX}
+\fi
+\label{Types-XMAX}
+\index{XMAX}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+XMAX = 50;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{YMAX}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{YMAX}
+\fi
+\label{Types-YMAX}
+\index{YMAX}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+YMAX = 50;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{MAXTAILLE}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{MAXTAILLE}
+\fi
+\label{Types-MAXTAILLE}
+\index{MAXTAILLE}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+MAXTAILLE = 100;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{MAXITEMS}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{MAXITEMS}
+\fi
+\label{Types-MAXITEMS}
+\index{MAXITEMS}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+MAXITEMS = 4;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{UpKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{UpKey}
+\fi
+\label{Types-UpKey}
+\index{UpKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+UpKey={\#}122;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{DownKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{DownKey}
+\fi
+\label{Types-DownKey}
+\index{DownKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+DownKey={\#}115;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{RightKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{RightKey}
+\fi
+\label{Types-RightKey}
+\index{RightKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+RightKey={\#}100;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\ifpdf
+\subsection*{\large{\textbf{LeftKey}}\normalsize\hspace{1ex}\hrulefill}
+\else
+\subsection*{LeftKey}
+\fi
+\label{Types-LeftKey}
+\index{LeftKey}
+\begin{list}{}{
+\settowidth{\tmplength}{\textbf{Déclaration}}
+\setlength{\itemindent}{0cm}
+\setlength{\listparindent}{0cm}
+\setlength{\leftmargin}{\evensidemargin}
+\addtolength{\leftmargin}{\tmplength}
+\settowidth{\labelsep}{X}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\labelwidth}{\tmplength}
+}
+\item[\textbf{Déclaration}\hfill]
+\ifpdf
+\begin{flushleft}
+\fi
+\begin{ttfamily}
+LeftKey={\#}113;\end{ttfamily}
+
+\ifpdf
+\end{flushleft}
+\fi
+
+\end{list}
+\end{document}
